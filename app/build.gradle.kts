@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.tieproost.fitnessapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.tieproost.fitnessapp"
