@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.ui.navigation
+package com.tieproost.fitnessapp.ui.navigation.bars
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 
+// TODO
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun TopNavigationBar() {
