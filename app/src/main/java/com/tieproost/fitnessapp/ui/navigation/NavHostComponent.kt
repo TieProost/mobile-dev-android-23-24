@@ -13,10 +13,10 @@ import androidx.navigation.compose.composable
 
 @Composable
 fun NavHostComponent(
-    navController: NavHostController,
     paddingValues: PaddingValues,
+    navController: NavHostController,
+    startDestination: String,
 ) {
-    val startDestination = NavigationDestinations.Dashboard.name
     val direction = if (navController.currentDestination?.route == startDestination) -1 else 1
     val duration = 300
 
