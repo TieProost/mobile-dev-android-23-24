@@ -28,7 +28,9 @@ fun NavHostComponent(
         startDestination = startDestination,
     ) {
         NavigationDestinations.values().forEach { destination ->
-            composable(route = destination.name) { destination.content() }
+            composable(route = destination.name) {
+                destination.content()
+            }
         }
     }
 }
