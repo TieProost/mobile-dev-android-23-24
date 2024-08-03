@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
 }
 
 android {
@@ -73,6 +74,9 @@ dependencies {
 
     // navigation
     implementation("androidx.navigation:navigation-compose:2.7.5")
+
+    // AsyncImage
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
