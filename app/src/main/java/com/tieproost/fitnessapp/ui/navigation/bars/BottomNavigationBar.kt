@@ -15,10 +15,13 @@ fun BottomNavigationBar(
 ) {
     NavigationBar {
         NavigationDestinations.values().forEach { destination ->
+            val selected = selectedDestination == destination.name
+
             NavigationBarItem(
                 icon = { Icon(destination.icon, destination.name) },
                 label = { Text(stringResource(destination.textId)) },
-                selected = selectedDestination == destination.name,
+                selected = selected,
+                enabled = !selected,
                 onClick = { navigateTo(destination) },
             )
         }
