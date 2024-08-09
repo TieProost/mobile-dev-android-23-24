@@ -54,6 +54,6 @@ class DefaultAppContainer(
     }
 
     override val mealsRepository: MealsRepository by lazy {
-        CachingMealsRepository(retrofitService, context)
+        CachingMealsRepository(retrofitService, RoomDb.getDatabase(context).foodDao(), context)
     }
 }
