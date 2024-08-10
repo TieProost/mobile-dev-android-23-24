@@ -3,7 +3,7 @@ package com.tieproost.fitnessapp.data.repository
 import android.content.Context
 import com.tieproost.fitnessapp.data.database.FoodDao
 import com.tieproost.fitnessapp.data.database.asDbFood
-import com.tieproost.fitnessapp.network.MealsApiService
+import com.tieproost.fitnessapp.network.FitnessApiService
 import com.tieproost.fitnessapp.network.model.ApiFood
 import com.tieproost.fitnessapp.network.model.ApiMeal
 import com.tieproost.fitnessapp.network.model.RequestBody
@@ -17,13 +17,13 @@ interface MealsRepository {
 }
 
 class CachingMealsRepository(
-    private val mealApiService: MealsApiService,
+    private val fitnessApiService: FitnessApiService,
     private val foodDao: FoodDao,
     context: Context,
 ) : MealsRepository {
     override suspend fun searchMeal(query: String): Flow<ApiMeal> =
         flow {
-            emit(mealApiService.getMeal(RequestBody(query)))
+            emit(fitnessApiService.getMeal(RequestBody(query)))
         }
 
     override suspend fun insertFood(food: ApiFood) {

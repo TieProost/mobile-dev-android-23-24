@@ -5,7 +5,7 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import com.tieproost.fitnessapp.BuildConfig
 import com.tieproost.fitnessapp.data.repository.CachingMealsRepository
 import com.tieproost.fitnessapp.data.repository.MealsRepository
-import com.tieproost.fitnessapp.network.MealsApiService
+import com.tieproost.fitnessapp.network.FitnessApiService
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
@@ -49,8 +49,8 @@ class DefaultAppContainer(
             .client(client)
             .build()
 
-    private val retrofitService: MealsApiService by lazy {
-        retrofit.create(MealsApiService::class.java)
+    private val retrofitService: FitnessApiService by lazy {
+        retrofit.create(FitnessApiService::class.java)
     }
 
     override val mealsRepository: MealsRepository by lazy {
