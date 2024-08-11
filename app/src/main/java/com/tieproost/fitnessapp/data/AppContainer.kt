@@ -3,7 +3,9 @@ package com.tieproost.fitnessapp.data
 import android.content.Context
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.tieproost.fitnessapp.BuildConfig
+import com.tieproost.fitnessapp.data.repository.CachingExerciseRepository
 import com.tieproost.fitnessapp.data.repository.CachingMealsRepository
+import com.tieproost.fitnessapp.data.repository.ExerciseRepository
 import com.tieproost.fitnessapp.data.repository.MealsRepository
 import com.tieproost.fitnessapp.network.FitnessApiService
 import kotlinx.serialization.json.Json
@@ -14,6 +16,7 @@ import retrofit2.Retrofit
 
 interface AppContainer {
     val mealsRepository: MealsRepository
+    val exerciseRepository: ExerciseRepository
 }
 
 class DefaultAppContainer(
@@ -55,5 +58,9 @@ class DefaultAppContainer(
 
     override val mealsRepository: MealsRepository by lazy {
         CachingMealsRepository(retrofitService, RoomDb.getDatabase(context).foodDao(), context)
+    }
+
+    override val exerciseRepository: ExerciseRepository by lazy {
+        CachingExerciseRepository(retrofitService, RoomDb.getDatabase(context).exerciseDao(), context)
     }
 }
