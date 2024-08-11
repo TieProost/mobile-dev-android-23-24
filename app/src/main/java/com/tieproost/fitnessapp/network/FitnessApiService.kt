@@ -8,7 +8,7 @@ import retrofit2.http.POST
 
 interface FitnessApiService {
     @POST("natural/nutrients")
-    suspend fun getMeal(
+    suspend fun searchMeal(
         @Body body: RequestBody,
     ): ApiMeal
 

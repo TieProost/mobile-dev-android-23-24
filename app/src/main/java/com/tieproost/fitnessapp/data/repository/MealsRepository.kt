@@ -23,7 +23,7 @@ class CachingMealsRepository(
 ) : MealsRepository {
     override suspend fun searchMeal(query: String): Flow<ApiMeal> =
         flow {
-            emit(fitnessApiService.getMeal(RequestBody(query)))
+            emit(fitnessApiService.searchMeal(RequestBody(query)))
         }
 
     override suspend fun insertFood(food: ApiFood) {
