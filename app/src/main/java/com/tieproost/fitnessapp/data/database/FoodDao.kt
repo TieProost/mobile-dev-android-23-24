@@ -4,7 +4,9 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FoodDao {
@@ -17,6 +19,6 @@ interface FoodDao {
     @Delete
     suspend fun delete(item: DbFood)
 
-//    @Query("SELECT * from foods ORDER BY name ASC")
-//    fun getAllItems(): Flow<List<DbMeals>>
+    @Query("SELECT * from foods ORDER BY id ASC")
+    fun getAllItems(): Flow<List<DbFood>>
 }

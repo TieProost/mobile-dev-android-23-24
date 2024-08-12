@@ -19,10 +19,10 @@ data class DbFood(
     val photo: String,
 )
 
-fun ApiFood.asDbFood(): DbFood =
+fun ApiFood.asDbFood(mealType: MealType): DbFood =
     DbFood(
         date = LocalDate.now(),
-        meal = MealType.Breakfast,
+        meal = mealType,
         name = food_name,
         servingQty = serving_qty,
         servingUnit = serving_unit,
