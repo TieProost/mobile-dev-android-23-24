@@ -2,6 +2,7 @@ package com.tieproost.fitnessapp.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.tieproost.fitnessapp.model.Food
 import com.tieproost.fitnessapp.network.model.ApiFood
 import java.time.LocalDate
 
@@ -28,3 +29,17 @@ fun ApiFood.asDbFood(): DbFood =
         calories = nf_calories,
         photo = photo.thumb,
     )
+
+fun List<DbFood>.asDomainFoods(): List<Food> =
+    this.map {
+        Food(
+            id = it.id,
+            date = it.date,
+            meal = it.meal,
+            name = it.name,
+            servingQty = it.servingQty,
+            servingUnit = it.servingUnit,
+            calories = it.calories,
+            photo = it.photo,
+        )
+    }
