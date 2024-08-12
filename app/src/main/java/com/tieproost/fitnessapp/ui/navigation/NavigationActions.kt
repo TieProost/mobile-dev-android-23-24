@@ -1,5 +1,6 @@
 package com.tieproost.fitnessapp.ui.navigation
 
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 
 class NavigationActions(
@@ -7,9 +8,9 @@ class NavigationActions(
 ) {
     fun navigateTo(destination: NavigationDestinations) {
         navController.navigate(destination.name) {
-            // Pop up to the last identical destination to avoid duplicates
-            popUpTo(navController.graph.findLast { it.route == destination.name }!!.id) {
-                saveState = false
+            // Pop up to the start destination of the graph to avoid building up a large stack of destinations
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
             }
             // Avoid re-selecting the same item
             launchSingleTop = true
