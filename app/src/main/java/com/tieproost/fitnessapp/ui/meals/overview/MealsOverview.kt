@@ -5,7 +5,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.tieproost.fitnessapp.data.database.entities.MealType
+import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
 import com.tieproost.fitnessapp.ui.meals.components.MealTypeHeader
 

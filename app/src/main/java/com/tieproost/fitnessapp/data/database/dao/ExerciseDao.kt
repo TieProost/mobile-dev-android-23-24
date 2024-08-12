@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Update
-import com.tieproost.fitnessapp.data.database.entities.DbExercise
+import com.tieproost.fitnessapp.data.database.model.DbExercise
 
 @Dao
 interface ExerciseDao {

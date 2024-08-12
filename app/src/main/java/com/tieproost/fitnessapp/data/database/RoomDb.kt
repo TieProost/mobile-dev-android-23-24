@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.tieproost.fitnessapp.data.database.dao.ExerciseDao
 import com.tieproost.fitnessapp.data.database.dao.FoodDao
-import com.tieproost.fitnessapp.data.database.entities.DbExercise
-import com.tieproost.fitnessapp.data.database.entities.DbFood
+import com.tieproost.fitnessapp.data.database.model.DbExercise
+import com.tieproost.fitnessapp.data.database.model.DbFood
 
 /**
  * Database class with a singleton Instance object.

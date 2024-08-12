@@ -1,6 +1,6 @@
 package com.tieproost.fitnessapp.ui.meals.overview
 
-import com.tieproost.fitnessapp.data.database.entities.MealType
+import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.model.Food
 
 data class MealsOverviewState(

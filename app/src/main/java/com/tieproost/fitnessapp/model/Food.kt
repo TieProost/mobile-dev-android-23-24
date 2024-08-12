@@ -1,6 +1,6 @@
 package com.tieproost.fitnessapp.model
 
-import com.tieproost.fitnessapp.data.database.entities.MealType
+import com.tieproost.fitnessapp.data.database.model.MealType
 import java.time.LocalDate
 
 data class Food(
