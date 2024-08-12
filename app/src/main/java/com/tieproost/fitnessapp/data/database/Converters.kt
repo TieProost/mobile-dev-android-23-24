@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.data
+package com.tieproost.fitnessapp.data.database
 
 import androidx.room.TypeConverter
 import java.time.LocalDate

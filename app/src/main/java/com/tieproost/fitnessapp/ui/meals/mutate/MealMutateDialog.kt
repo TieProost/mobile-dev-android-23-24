@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.tieproost.fitnessapp.data.database.MealType
-import com.tieproost.fitnessapp.data.database.asDomainFood
+import com.tieproost.fitnessapp.data.database.entities.MealType
+import com.tieproost.fitnessapp.data.database.entities.asDomainFood
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
 
 @Composable

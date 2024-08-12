@@ -1,10 +1,10 @@
 package com.tieproost.fitnessapp.data.repository
 
 import android.content.Context
-import com.tieproost.fitnessapp.data.database.FoodDao
-import com.tieproost.fitnessapp.data.database.MealType
-import com.tieproost.fitnessapp.data.database.asDbFood
-import com.tieproost.fitnessapp.data.database.asDomainFoods
+import com.tieproost.fitnessapp.data.database.dao.FoodDao
+import com.tieproost.fitnessapp.data.database.entities.MealType
+import com.tieproost.fitnessapp.data.database.entities.asDbFood
+import com.tieproost.fitnessapp.data.database.entities.asDomainFoods
 import com.tieproost.fitnessapp.model.Food
 import com.tieproost.fitnessapp.network.FitnessApiService
 import com.tieproost.fitnessapp.network.model.ApiFood

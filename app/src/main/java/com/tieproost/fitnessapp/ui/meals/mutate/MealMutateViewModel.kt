@@ -9,7 +9,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.tieproost.fitnessapp.FitnessApplication
-import com.tieproost.fitnessapp.data.database.MealType
+import com.tieproost.fitnessapp.data.database.entities.MealType
 import com.tieproost.fitnessapp.data.repository.MealsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

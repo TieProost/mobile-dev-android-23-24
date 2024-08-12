@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.data.database
+package com.tieproost.fitnessapp.data.database.entities
 
 enum class MealType {
     Breakfast,

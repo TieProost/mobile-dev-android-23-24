@@ -3,6 +3,7 @@ package com.tieproost.fitnessapp.data
 import android.content.Context
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.tieproost.fitnessapp.BuildConfig
+import com.tieproost.fitnessapp.data.database.RoomDb
 import com.tieproost.fitnessapp.data.repository.CachingExerciseRepository
 import com.tieproost.fitnessapp.data.repository.CachingMealsRepository
 import com.tieproost.fitnessapp.data.repository.ExerciseRepository

@@ -1,8 +1,8 @@
 package com.tieproost.fitnessapp.data.repository
 
 import android.content.Context
-import com.tieproost.fitnessapp.data.database.ExerciseDao
-import com.tieproost.fitnessapp.data.database.asDbExercise
+import com.tieproost.fitnessapp.data.database.dao.ExerciseDao
+import com.tieproost.fitnessapp.data.database.entities.asDbExercise
 import com.tieproost.fitnessapp.network.FitnessApiService
 import com.tieproost.fitnessapp.network.model.ApiExercise
 import com.tieproost.fitnessapp.network.model.ApiWorkout

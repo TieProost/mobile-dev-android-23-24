@@ -1,14 +1,14 @@
-package com.tieproost.fitnessapp.data
+package com.tieproost.fitnessapp.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.tieproost.fitnessapp.data.database.DbExercise
-import com.tieproost.fitnessapp.data.database.DbFood
-import com.tieproost.fitnessapp.data.database.ExerciseDao
-import com.tieproost.fitnessapp.data.database.FoodDao
+import com.tieproost.fitnessapp.data.database.dao.ExerciseDao
+import com.tieproost.fitnessapp.data.database.dao.FoodDao
+import com.tieproost.fitnessapp.data.database.entities.DbExercise
+import com.tieproost.fitnessapp.data.database.entities.DbFood
 
 /**
  * Database class with a singleton Instance object.
