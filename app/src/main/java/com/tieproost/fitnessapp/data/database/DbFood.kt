@@ -19,6 +19,23 @@ data class DbFood(
     val photo: String,
 )
 
+fun DbFood.asDomainFood(): Food =
+    Food(
+        id = id,
+        date = date,
+        meal = meal,
+        name = name,
+        servingQty = servingQty,
+        servingUnit = servingUnit,
+        calories = calories,
+        photo = photo,
+    )
+
+fun List<DbFood>.asDomainFoods(): List<Food> =
+    this.map {
+        it.asDomainFood()
+    }
+
 fun ApiFood.asDbFood(mealType: MealType): DbFood =
     DbFood(
         date = LocalDate.now(),
@@ -30,16 +47,14 @@ fun ApiFood.asDbFood(mealType: MealType): DbFood =
         photo = photo.thumb,
     )
 
-fun List<DbFood>.asDomainFoods(): List<Food> =
-    this.map {
-        Food(
-            id = it.id,
-            date = it.date,
-            meal = it.meal,
-            name = it.name,
-            servingQty = it.servingQty,
-            servingUnit = it.servingUnit,
-            calories = it.calories,
-            photo = it.photo,
-        )
-    }
+fun ApiFood.asDomainFood(): Food =
+    Food(
+        id = 0,
+        date = LocalDate.now(),
+        meal = MealType.Breakfast,
+        name = food_name,
+        servingQty = serving_qty,
+        servingUnit = serving_unit,
+        calories = nf_calories,
+        photo = photo.thumb,
+    )
