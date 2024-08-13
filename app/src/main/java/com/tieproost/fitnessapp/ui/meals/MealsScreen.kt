@@ -25,7 +25,7 @@ fun MealsScreen() {
             is MealsOverviewApiState.Success ->
                 MealsOverview(
                     uiListState = uiListState,
-                    openDialog = mealsOverviewViewModel::showDialog,
+                    showDialog = mealsOverviewViewModel::showDialog,
                 )
         }
 

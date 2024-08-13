@@ -12,11 +12,11 @@ import com.tieproost.fitnessapp.ui.meals.components.MealTypeHeader
 @Composable
 fun MealsOverview(
     uiListState: MealsListState,
-    openDialog: (MealType) -> Unit,
+    showDialog: (MealType) -> Unit,
 ) {
     LazyColumn(state = rememberLazyListState()) {
         items(MealType.values()) {
-            MealTypeHeader(it, openDialog = { openDialog(it) })
+            MealTypeHeader(it, openDialog = { showDialog(it) })
 
             val meal = uiListState.foods.filter { food -> food.meal == it }
             if (meal.isEmpty()) {

@@ -4,7 +4,6 @@ import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.model.Food
 
 data class MealsOverviewState(
-    val foods: List<Food> = listOf(),
     val isDialogVisible: Boolean = false,
     val dialogMealType: MealType = MealType.Breakfast,
 )

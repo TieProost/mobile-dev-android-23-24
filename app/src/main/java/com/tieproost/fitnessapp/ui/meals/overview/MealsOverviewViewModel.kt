@@ -27,7 +27,7 @@ class MealsOverviewViewModel(
         private set
 
     // uiState is a cold flow. Changes don't come in from above unless a refresh is called
-    private val _uiState = MutableStateFlow(MealsOverviewState()) // (/*TaskSampler.getAll()*/)
+    private val _uiState = MutableStateFlow(MealsOverviewState())
     val uiState: StateFlow<MealsOverviewState> = _uiState.asStateFlow()
 
     // uiListState is a hot flow (.stateIn makes it so)
