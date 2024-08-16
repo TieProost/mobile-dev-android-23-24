@@ -114,4 +114,7 @@ dependencies {
 
     // Kotlin coroutines test
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+
+    // navigation testing
+    androidTestImplementation("androidx.navigation:navigation-testing:2.7.5")
 }
