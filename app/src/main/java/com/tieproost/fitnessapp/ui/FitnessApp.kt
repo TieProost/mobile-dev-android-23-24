@@ -1,10 +1,10 @@
 package com.tieproost.fitnessapp.ui
 
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.tieproost.fitnessapp.ui.navigation.NavHostComponent
@@ -13,10 +13,8 @@ import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import com.tieproost.fitnessapp.ui.navigation.bars.BottomNavigationBar
 import com.tieproost.fitnessapp.ui.navigation.bars.TopNavigationBar
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FitnessApp() {
-    val navController = rememberNavController()
+fun FitnessApp(navController: NavHostController = rememberNavController()) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
 
     val startDestination = NavigationDestinations.Dashboard.name

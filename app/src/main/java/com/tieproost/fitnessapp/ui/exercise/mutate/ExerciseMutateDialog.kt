@@ -32,6 +32,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
@@ -39,6 +41,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.tieproost.fitnessapp.data.database.model.asDomainExercise
 import com.tieproost.fitnessapp.model.Exercise
+import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import kotlin.math.roundToInt
 
 @Composable
@@ -53,6 +56,7 @@ fun ExerciseMutateDialog(hideDialog: () -> Unit) {
         properties = DialogProperties(usePlatformDefaultWidth = false),
     ) {
         Scaffold(
+            modifier = Modifier.testTag(stringResource(NavigationDestinations.Exercise.textId) + "AddDialog"),
             topBar = {
                 TopAppBar(title = { Text("Add exercise") }, navigationIcon = {
                     IconButton(onClick = hideDialog) {

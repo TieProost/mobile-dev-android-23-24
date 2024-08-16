@@ -22,6 +22,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
@@ -29,6 +31,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.data.database.model.asDomainFood
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
+import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,6 +48,7 @@ fun MealMutateDialog(
         properties = DialogProperties(usePlatformDefaultWidth = false),
     ) {
         Scaffold(
+            modifier = Modifier.testTag(stringResource(NavigationDestinations.Meals.textId) + "AddDialog"),
             topBar = {
                 TopAppBar(title = { Text("Add ${mealType.name}") }, navigationIcon = {
                     IconButton(onClick = hideDialog) {

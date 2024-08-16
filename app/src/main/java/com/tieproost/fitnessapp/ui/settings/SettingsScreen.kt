@@ -19,10 +19,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.model.Settings
+import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import com.tieproost.fitnessapp.ui.settings.dialog.CalorieGoalDialogContent
 import com.tieproost.fitnessapp.ui.settings.dialog.HeightDialogContent
 import com.tieproost.fitnessapp.ui.settings.dialog.SexDialogContent
@@ -82,7 +85,12 @@ fun SettingsScreen() {
         }
     }
 
-    Box(modifier = Modifier.fillMaxHeight()) {
+    Box(
+        modifier =
+            Modifier
+                .fillMaxHeight()
+                .testTag(stringResource(NavigationDestinations.Settings.textId)),
+    ) {
         when (apiState) {
             is SettingsApiState.Loading -> Text("Loading...")
             is SettingsApiState.Error -> Text("Couldn't load...")
@@ -174,7 +182,10 @@ fun SettingListItem(
     value: String,
 ) {
     ListItem(
-        modifier = Modifier.clickable { onClick() },
+        modifier =
+            Modifier
+                .clickable { onClick() }
+                .testTag(stringResource(NavigationDestinations.Settings.textId) + "AddButton"),
         leadingContent = {
             Text(text = title)
         },

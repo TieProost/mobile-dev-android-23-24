@@ -26,10 +26,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.model.Settings
 import com.tieproost.fitnessapp.ui.dashboard.components.CaloriesCard
+import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
 import java.time.LocalDate
 import java.time.Period
@@ -44,7 +47,8 @@ fun DashboardScreen() {
         modifier =
             Modifier
                 .fillMaxHeight()
-                .verticalScroll(rememberScrollState()),
+                .verticalScroll(rememberScrollState())
+                .testTag(stringResource(NavigationDestinations.Dashboard.textId)),
     ) {
         when (apiState) {
             is DashboardApiState.Loading -> Text("Loading...")
@@ -60,7 +64,9 @@ fun DashboardScreen() {
 @Composable
 fun DashBoardOverview(uiState: DashboardState) {
     Column(
-        modifier = Modifier.padding(16.dp),
+        modifier =
+            Modifier
+                .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         CaloriesCard(

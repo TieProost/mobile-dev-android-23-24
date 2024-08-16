@@ -22,6 +22,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -30,6 +32,7 @@ import com.tieproost.fitnessapp.ui.exercise.mutate.ExerciseMutateDialog
 import com.tieproost.fitnessapp.ui.exercise.overview.ExerciseListState
 import com.tieproost.fitnessapp.ui.exercise.overview.ExerciseOverviewApiState
 import com.tieproost.fitnessapp.ui.exercise.overview.ExerciseOverviewViewModel
+import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
 @Composable
 fun ExerciseScreen() {
@@ -38,7 +41,12 @@ fun ExerciseScreen() {
     val uiListState by exerciseOverviewViewModel.uiListState.collectAsState()
     val apiState = exerciseOverviewViewModel.apiState
 
-    Box {
+    Box(
+        modifier =
+            Modifier
+                .fillMaxHeight()
+                .testTag(stringResource(NavigationDestinations.Exercise.textId)),
+    ) {
         when (apiState) {
             is ExerciseOverviewApiState.Loading -> Text("Loading...")
             is ExerciseOverviewApiState.Error -> Text("Couldn't load...")
@@ -90,7 +98,10 @@ fun ExerciseOverview(
                     .padding(horizontal = 16.dp),
         ) {
             Text("Exercise", modifier = Modifier)
-            Button(onClick = showDialog) {
+            Button(
+                modifier = Modifier.testTag(stringResource(NavigationDestinations.Exercise.textId) + "AddButton"),
+                onClick = showDialog,
+            ) {
                 Icon(Icons.Filled.Add, contentDescription = "")
             }
         }
