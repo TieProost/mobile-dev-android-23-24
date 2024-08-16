@@ -20,5 +20,5 @@ class CachingSettingsRepository(
         settingsDao.update(settings.asDbSettings())
     }
 
-    override fun getSettings(): Flow<Settings> = settingsDao.get().map { it.asDomainSettings() }
+    override fun getSettings(): Flow<Settings> = settingsDao.get().map { it?.asDomainSettings() ?: Settings() }
 }

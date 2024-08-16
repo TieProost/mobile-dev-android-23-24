@@ -17,5 +17,5 @@ interface SettingsDao {
     suspend fun update(item: DbSettings)
 
     @Query("SELECT * from settings WHERE id = 0")
-    fun get(): Flow<DbSettings>
+    fun get(): Flow<DbSettings?>
 }
