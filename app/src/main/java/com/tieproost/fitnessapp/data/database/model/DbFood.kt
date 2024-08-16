@@ -21,7 +21,17 @@ data class DbFood(
 
 fun DbFood.asDomainFood(): Food =
     Food(
-        id = id,
+        date = date,
+        meal = meal,
+        name = name,
+        servingQty = servingQty,
+        servingUnit = servingUnit,
+        calories = calories,
+        photo = photo,
+    )
+
+fun Food.asDbFood(): DbFood =
+    DbFood(
         date = date,
         meal = meal,
         name = name,
@@ -49,7 +59,6 @@ fun ApiFood.asDbFood(mealType: MealType): DbFood =
 
 fun ApiFood.asDomainFood(): Food =
     Food(
-        id = 0,
         date = LocalDate.now(),
         meal = MealType.Breakfast,
         name = food_name,

@@ -4,7 +4,6 @@ import com.tieproost.fitnessapp.data.database.model.MealType
 import java.time.LocalDate
 
 data class Food(
-    val id: Int,
     val date: LocalDate,
     val meal: MealType,
     val name: String,

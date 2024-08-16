@@ -48,3 +48,12 @@ fun ApiExercise.asDomainExercise(): Exercise =
         calories = nf_calories,
         photo = photo.thumb,
     )
+
+fun Exercise.asDbExercise(): DbExercise =
+    DbExercise(
+        date = date,
+        name = name,
+        calories = calories,
+        photo = photo,
+        durationMinutes = durationMinutes,
+    )
