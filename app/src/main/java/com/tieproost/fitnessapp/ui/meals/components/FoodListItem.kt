@@ -4,7 +4,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
@@ -22,8 +21,8 @@ import kotlin.math.roundToInt
 @Composable
 fun FoodListItem(food: Food) {
     ListItem(
-        headlineText = { Text(food.name) },
-        supportingText = { Text("${food.servingQty} x ${food.servingUnit}") },
+        headlineContent = { Text(food.name) },
+        supportingContent = { Text("${food.servingQty} x ${food.servingUnit}") },
         trailingContent = { Text("${food.calories.roundToInt()} kcal") },
         leadingContent = {
             AsyncImage(
@@ -45,5 +44,5 @@ fun FoodListItem(food: Food) {
             )
         },
     )
-    Divider()
+    // Divider()
 }

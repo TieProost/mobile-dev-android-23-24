@@ -23,6 +23,8 @@ interface MealsRepository {
     )
 
     fun getMeals(): Flow<List<Food>>
+
+    fun getTotalCalories(): Flow<Double>
 }
 
 class CachingMealsRepository(
@@ -46,4 +48,6 @@ class CachingMealsRepository(
         foodDao.getAllItems().map {
             it.asDomainFoods()
         }
+
+    override fun getTotalCalories(): Flow<Double> = foodDao.getTotalCalories()
 }

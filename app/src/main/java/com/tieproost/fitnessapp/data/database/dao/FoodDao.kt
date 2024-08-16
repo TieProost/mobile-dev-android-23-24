@@ -20,6 +20,9 @@ interface FoodDao {
     @Delete
     suspend fun delete(item: DbFood)
 
-    @Query("SELECT * from foods ORDER BY id ASC")
+    @Query("SELECT * FROM foods WHERE DATE(date) = DATE('now') ORDER BY id ASC")
     fun getAllItems(): Flow<List<DbFood>>
+
+    @Query("SELECT SUM(calories) FROM foods WHERE DATE(date) = DATE('now')")
+    fun getTotalCalories(): Flow<Double>
 }
