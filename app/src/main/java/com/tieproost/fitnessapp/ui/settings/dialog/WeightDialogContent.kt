@@ -63,6 +63,7 @@ fun WeightDialogContent(
                 value = textFieldValueState,
                 onValueChange = onTextFieldValueChange,
                 keyboardOptions = keyBoardOptions,
+                singleLine = true,
                 label = { Text("Weight") },
                 modifier = Modifier.focusRequester(focusRequester),
                 isError = isError,

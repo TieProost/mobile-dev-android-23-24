@@ -54,6 +54,7 @@ fun HeightDialogContent(
                 value = textFieldValueState,
                 onValueChange = onTextFieldValueChange,
                 keyboardOptions = keyBoardOptions,
+                singleLine = true,
                 label = { Text("Height") },
                 modifier = Modifier.focusRequester(focusRequester),
             )

@@ -63,6 +63,7 @@ fun CalorieGoalDialogContent(
                 value = textFieldValueState,
                 onValueChange = onTextFieldValueChange,
                 keyboardOptions = keyBoardOptions,
+                singleLine = true,
                 label = { Text("Goal") },
                 modifier = Modifier.focusRequester(focusRequester),
                 isError = isError,
