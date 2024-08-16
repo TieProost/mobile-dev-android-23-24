@@ -6,8 +6,10 @@ import com.tieproost.fitnessapp.BuildConfig
 import com.tieproost.fitnessapp.data.database.RoomDb
 import com.tieproost.fitnessapp.data.repository.CachingExerciseRepository
 import com.tieproost.fitnessapp.data.repository.CachingMealsRepository
+import com.tieproost.fitnessapp.data.repository.CachingSettingsRepository
 import com.tieproost.fitnessapp.data.repository.ExerciseRepository
 import com.tieproost.fitnessapp.data.repository.MealsRepository
+import com.tieproost.fitnessapp.data.repository.SettingsRepository
 import com.tieproost.fitnessapp.network.FitnessApiService
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
@@ -18,6 +20,7 @@ import retrofit2.Retrofit
 interface AppContainer {
     val mealsRepository: MealsRepository
     val exerciseRepository: ExerciseRepository
+    val settingsRepository: SettingsRepository
 }
 
 class DefaultAppContainer(
@@ -62,6 +65,10 @@ class DefaultAppContainer(
     }
 
     override val exerciseRepository: ExerciseRepository by lazy {
-        CachingExerciseRepository(retrofitService, RoomDb.getDatabase(context).exerciseDao(), context)
+        CachingExerciseRepository(retrofitService, RoomDb.getDatabase(context).exerciseDao())
+    }
+
+    override val settingsRepository: SettingsRepository by lazy {
+        CachingSettingsRepository(RoomDb.getDatabase(context).settingsDao())
     }
 }
