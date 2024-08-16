@@ -65,7 +65,28 @@ class NavigationTest {
     @Test
     fun navigateToSettingsAndOpenDialog() {
         composeTestRule.navigateToDestination(settingsText)
-        composeTestRule.openDialog(settingsText)
+        composeTestRule
+            .onAllNodesWithTag(settingsText + "AddButton")
+            .apply {
+                fetchSemanticsNodes().forEachIndexed { i, _ ->
+                    get(i)
+                        .assertIsDisplayed()
+                        .performClick()
+
+                    composeTestRule
+                        .onNodeWithTag(settingsText + "AddDialog")
+                        .assertIsDisplayed()
+
+                    composeTestRule
+                        .onNodeWithTag(settingsText + "Cancel")
+                        .assertIsDisplayed()
+                        .performClick()
+
+                    composeTestRule
+                        .onNodeWithTag(settingsText + "AddDialog")
+                        .assertDoesNotExist()
+                }
+            }
     }
 
     private fun ComposeContentTestRule.navigateToDestination(name: String) {

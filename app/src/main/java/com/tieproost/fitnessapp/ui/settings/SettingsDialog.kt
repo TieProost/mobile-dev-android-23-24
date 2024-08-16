@@ -43,7 +43,13 @@ fun SettingsDialog(
                             .fillMaxWidth()
                             .padding(bottom = 8.dp, end = 8.dp, top = 16.dp),
                 ) {
-                    TextButton(onClick = hideDialog) {
+                    TextButton(
+                        onClick = hideDialog,
+                        modifier =
+                            Modifier.testTag(
+                                stringResource(NavigationDestinations.Settings.textId) + "Cancel",
+                            ),
+                    ) {
                         Text(text = "Cancel")
                     }
                     TextButton(onClick = {
