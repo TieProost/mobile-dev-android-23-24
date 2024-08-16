@@ -25,7 +25,10 @@ fun FitnessApp() {
 
     Scaffold(
         topBar = {
-            TopNavigationBar()
+            TopNavigationBar(
+                navigateToSettings = { navigationActions.navigateTo(NavigationDestinations.Settings) },
+                selectedDestination = selectedDestination,
+            )
         },
         bottomBar = {
             BottomNavigationBar(

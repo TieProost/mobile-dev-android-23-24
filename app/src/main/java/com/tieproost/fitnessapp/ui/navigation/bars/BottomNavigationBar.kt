@@ -14,7 +14,7 @@ fun BottomNavigationBar(
     navigateTo: (NavigationDestinations) -> Unit,
 ) {
     NavigationBar {
-        NavigationDestinations.values().forEach { destination ->
+        NavigationDestinations.values().slice(0..2).forEach { destination ->
             val selected = selectedDestination == destination.name
 
             NavigationBarItem(
