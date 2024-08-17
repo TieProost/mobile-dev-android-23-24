@@ -17,8 +17,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
@@ -41,7 +41,7 @@ fun TopNavigationBar(
                 Icon(
                     imageVector = Icons.Filled.SportsGymnastics,
                     contentDescription = stringResource(R.string.app_logo),
-                    modifier = Modifier.size(40.dp),
+                    modifier = Modifier.size(dimensionResource(R.dimen.icon_large)),
                 )
                 Text(stringResource(R.string.app_name))
             }
@@ -53,8 +53,7 @@ fun TopNavigationBar(
                     selected = selected,
                     enabled = !selected,
                     onClick = navigateToSettings,
-                    modifier = Modifier.testTag(stringResource(NavigationDestinations.Settings.textId) +"NavigationItem"),
-
+                    modifier = Modifier.testTag(stringResource(NavigationDestinations.Settings.textId) + "NavigationItem"),
                 )
             }
         },

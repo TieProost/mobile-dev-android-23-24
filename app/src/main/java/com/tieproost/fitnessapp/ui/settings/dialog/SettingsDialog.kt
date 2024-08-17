@@ -11,8 +11,8 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.tieproost.fitnessapp.R
@@ -31,7 +31,7 @@ fun SettingsDialog(
         Box(
             modifier =
                 Modifier
-                    .padding(16.dp)
+                    .padding(dimensionResource(R.dimen.padding_medium))
                     .testTag(stringResource(NavigationDestinations.Settings.textId) + "AddDialog"),
         ) {
             Card(modifier = Modifier.fillMaxWidth()) {
@@ -42,7 +42,11 @@ fun SettingsDialog(
                     modifier =
                         Modifier
                             .fillMaxWidth()
-                            .padding(bottom = 8.dp, end = 8.dp, top = 16.dp),
+                            .padding(
+                                bottom = dimensionResource(R.dimen.padding_small),
+                                end = dimensionResource(R.dimen.padding_small),
+                                top = dimensionResource(R.dimen.padding_medium),
+                            ),
                 ) {
                     TextButton(
                         onClick = hideDialog,

@@ -10,7 +10,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun MutateDialogLoadingOverlay(
@@ -18,7 +19,9 @@ fun MutateDialogLoadingOverlay(
     content: @Composable () -> Unit,
 ) {
     Box {
-        Box(modifier = Modifier.padding(4.dp).padding(top = 16.dp)) {
+        Box(
+            modifier = Modifier.padding(dimensionResource(R.dimen.rounding_small)).padding(top = dimensionResource(R.dimen.padding_medium)),
+        ) {
             content()
         }
 
@@ -30,9 +33,9 @@ fun MutateDialogLoadingOverlay(
                         .fillMaxSize()
                         .background(MaterialTheme.colorScheme.background.copy(alpha = 0.7f)),
             ) {
-                Box(modifier = Modifier.padding(36.dp)) {
+                Box(modifier = Modifier.padding(dimensionResource(R.dimen.padding_large))) {
                     CircularProgressIndicator(
-                        modifier = Modifier.width(64.dp),
+                        modifier = Modifier.width(dimensionResource(R.dimen.icon_xl)),
                         color = MaterialTheme.colorScheme.secondary,
                         trackColor = MaterialTheme.colorScheme.surfaceVariant,
                     )

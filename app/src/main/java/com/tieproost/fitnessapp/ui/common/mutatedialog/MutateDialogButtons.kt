@@ -13,8 +13,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 
 @Composable
@@ -28,9 +28,9 @@ fun MutateDialogButtons(
     Row(
         modifier =
             Modifier
-                .padding(horizontal = 32.dp)
+                .padding(horizontal = dimensionResource(R.dimen.padding_large))
                 .fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_hor_medium)),
     ) {
         Button(
             onClick = onSearch,

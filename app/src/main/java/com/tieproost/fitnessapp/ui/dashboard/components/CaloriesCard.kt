@@ -19,8 +19,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 import kotlin.math.roundToInt
 
@@ -42,8 +42,8 @@ fun CaloriesCard(
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
         ) {
             Column {
                 Text(text = stringResource(R.string.calories), style = MaterialTheme.typography.titleLarge)
@@ -63,16 +63,16 @@ fun CaloriesCard(
                     }
                     CircularProgressIndicator(
                         progress = { 1f },
-                        modifier = Modifier.size(160.dp),
+                        modifier = Modifier.size(dimensionResource(R.dimen.photo_medium)),
                         color = MaterialTheme.colorScheme.surface,
-                        strokeWidth = 20.dp,
+                        strokeWidth = dimensionResource(R.dimen.stroke_xxl),
                     )
 
                     CircularProgressIndicator(
                         progress = { progress },
-                        modifier = Modifier.size(160.dp),
+                        modifier = Modifier.size(dimensionResource(R.dimen.photo_medium)),
                         color = MaterialTheme.colorScheme.primaryContainer,
-                        strokeWidth = 20.dp,
+                        strokeWidth = dimensionResource(R.dimen.stroke_xxl),
                     )
                 }
                 Column(

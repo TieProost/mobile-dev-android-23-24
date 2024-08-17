@@ -7,7 +7,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun DialogColumn(
@@ -15,8 +16,12 @@ fun DialogColumn(
     content: @Composable () -> Unit,
 ) {
     Column(
-        modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(28.dp),
+        modifier =
+            Modifier.padding(
+                horizontal = dimensionResource(R.dimen.spacing_medium),
+                vertical = dimensionResource(R.dimen.padding_medium),
+            ),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_large)),
     ) {
         Text(text = title, style = MaterialTheme.typography.titleSmall)
         content()

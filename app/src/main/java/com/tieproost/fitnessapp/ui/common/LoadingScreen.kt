@@ -10,14 +10,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun LoadingScreen() {
     Box(
         contentAlignment = Alignment.Center,
         modifier =
-            Modifier.fillMaxSize().padding(36.dp).background(MaterialTheme.colorScheme.background.copy(alpha = 0.7f)),
+            Modifier
+                .fillMaxSize()
+                .padding(dimensionResource(R.dimen.padding_large))
+                .background(MaterialTheme.colorScheme.background.copy(alpha = 0.7f)),
     ) {
         CircularProgressIndicator(
             modifier = Modifier.fillMaxWidth(0.25f),

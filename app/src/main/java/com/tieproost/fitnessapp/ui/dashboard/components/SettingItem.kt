@@ -10,7 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun SettingItem(
@@ -24,7 +25,7 @@ fun SettingItem(
         Icon(
             imageVector = icon,
             contentDescription = title,
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier.padding(dimensionResource(R.dimen.spacing_hor_medium)),
             tint = MaterialTheme.colorScheme.secondary,
         )
         Column {

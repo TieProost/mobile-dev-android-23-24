@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Exercise
@@ -31,13 +31,13 @@ fun ExerciseListItem(exercise: Exercise) {
                 contentScale = ContentScale.Crop,
                 modifier =
                     Modifier
-                        .width(40.dp)
+                        .width(dimensionResource(R.dimen.icon_large))
                         .aspectRatio(1f)
-                        .clip(RoundedCornerShape(4.dp))
+                        .clip(RoundedCornerShape(dimensionResource(R.dimen.rounding_small)))
                         .border(
-                            0.5.dp,
+                            dimensionResource(R.dimen.stroke_xs),
                             MaterialTheme.colorScheme.primaryContainer,
-                            RoundedCornerShape(4.dp),
+                            RoundedCornerShape(dimensionResource(R.dimen.rounding_small)),
                         ),
             )
         },

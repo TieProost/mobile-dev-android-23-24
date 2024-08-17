@@ -19,9 +19,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Settings
@@ -133,7 +133,7 @@ fun SettingsOverview(
         Text(
             text = "${stringResource(R.string.birthday)}: ",
             style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
         )
 
         SettingListItem(
@@ -168,7 +168,7 @@ fun SettingsOverview(
         Text(
             text = "${stringResource(R.string.about)}: ",
             style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
         )
 
         ListItem(

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rounding_small">4dp</dimen>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">32dp</dimen>
+
+    <dimen name="spacing_medium">24dp</dimen>
+    <dimen name="spacing_large">28dp</dimen>
+
+    <dimen name="icon_large">40dp</dimen>
+    <dimen name="icon_xl">64dp</dimen>
+
+    <dimen name="stroke_xs">0.5dp</dimen>
+    <dimen name="stroke_xxl">20dp</dimen>
+
+    <dimen name="textfield_medium">100dp</dimen>
+
+    <dimen name="photo_medium">160dp</dimen>
+</resources>

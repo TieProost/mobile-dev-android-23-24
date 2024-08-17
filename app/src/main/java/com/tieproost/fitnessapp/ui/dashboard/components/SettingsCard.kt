@@ -14,8 +14,8 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Settings
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
@@ -43,7 +43,7 @@ fun SettingsCard(settings: Settings) {
             modifier =
                 Modifier
                     .fillMaxWidth()
-                    .padding(16.dp),
+                    .padding(dimensionResource(R.dimen.padding_medium)),
         ) {
             Column(modifier = Modifier.fillMaxWidth(0.5f)) {
                 SettingItem(

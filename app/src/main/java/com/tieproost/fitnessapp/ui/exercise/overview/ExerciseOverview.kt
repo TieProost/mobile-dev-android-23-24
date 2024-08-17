@@ -10,8 +10,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Exercise
 import com.tieproost.fitnessapp.ui.common.OverviewHeader
@@ -36,7 +36,11 @@ fun ExerciseOverview(
             Text(
                 text = stringResource(R.string.no_exercises_logged_yet),
                 style = MaterialTheme.typography.titleSmall,
-                modifier = Modifier.padding(horizontal = 32.dp, vertical = 16.dp),
+                modifier =
+                    Modifier.padding(
+                        horizontal = dimensionResource(R.dimen.padding_large),
+                        vertical = dimensionResource(R.dimen.padding_medium),
+                    ),
             )
         } else {
             LazyColumn(state = rememberLazyListState(), modifier = Modifier.fillMaxHeight()) {

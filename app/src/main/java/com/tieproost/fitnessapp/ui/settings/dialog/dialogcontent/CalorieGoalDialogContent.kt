@@ -16,11 +16,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.settings.dialog.components.DialogColumn
 
@@ -58,7 +58,7 @@ fun CalorieGoalDialogContent(
     DialogColumn(title = stringResource(R.string.set_daily_intake_goal)) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
             modifier = Modifier.fillMaxWidth(),
         ) {
             OutlinedTextField(

@@ -10,9 +10,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.R
 
 @Composable
@@ -26,18 +26,22 @@ fun TotalCaloriesHeader(
     ) {
         Text(
             text,
-            modifier = Modifier.padding(top = 24.dp, end = 8.dp),
+            modifier =
+                Modifier.padding(
+                    top = dimensionResource(R.dimen.spacing_medium),
+                    end = dimensionResource(R.dimen.padding_small),
+                ),
         )
         Card(
             colors =
                 CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                 ),
-            modifier = Modifier.padding(top = 16.dp),
+            modifier = Modifier.padding(top = dimensionResource(R.dimen.padding_medium)),
         ) {
             Text(
                 "$calories ${stringResource(R.string.kcal)} ",
-                modifier = Modifier.padding(8.dp),
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)),
                 fontWeight = FontWeight.Bold,
             )
         }
