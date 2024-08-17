@@ -28,6 +28,7 @@ class ExerciseMutateViewModel(
     val uiState: StateFlow<ExerciseMutateState> = _uiState.asStateFlow()
 
     fun updateQuery(query: String) {
+        apiState = ExerciseMutateApiState.Success
         _uiState.update {
             it.copy(
                 query = query,
@@ -43,12 +44,16 @@ class ExerciseMutateViewModel(
                 .catch {
                     apiState = ExerciseMutateApiState.Error
                 }.collect {
-                    _uiState.update { currentState ->
-                        currentState.copy(
-                            results = currentState.results + it.exercises,
-                        )
+                    if (it.exercises.isEmpty()) {
+                        apiState = ExerciseMutateApiState.Error
+                    } else {
+                        _uiState.update { currentState ->
+                            currentState.copy(
+                                results = currentState.results + it.exercises,
+                            )
+                        }
+                        apiState = ExerciseMutateApiState.Success
                     }
-                    apiState = ExerciseMutateApiState.Success
                 }
         }
     }
