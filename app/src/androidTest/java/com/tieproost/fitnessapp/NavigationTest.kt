@@ -63,7 +63,7 @@ class NavigationTest {
     }
 
     @Test
-    fun navigateToSettingsAndOpenDialog() {
+    fun navigateToSettingsAndOpenAllDialogs() {
         composeTestRule.navigateToDestination(settingsText)
         composeTestRule
             .onAllNodesWithTag(settingsText + "AddButton")

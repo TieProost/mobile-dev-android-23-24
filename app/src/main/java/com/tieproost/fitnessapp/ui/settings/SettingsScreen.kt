@@ -167,10 +167,11 @@ fun SettingsOverview(
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(16.dp),
         )
-        SettingListItem(
-            onClick = {},
-            title = "Build with Nutrionix API © All rights reserved.",
-            value = "",
+
+        ListItem(
+            headlineContent = {
+                Text(text = "Build with Nutrionix API © All rights reserved.")
+            },
         )
     }
 }

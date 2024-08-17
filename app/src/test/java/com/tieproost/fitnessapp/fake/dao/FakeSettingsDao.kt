@@ -27,6 +27,9 @@ class FakeSettingsDao(
         settings = item
     }
 
+    override suspend fun delete(item: DbSettings) {
+    }
+
     override fun get(): Flow<DbSettings?> =
         flow {
             emit(settings ?: DbSettings())
