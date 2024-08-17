@@ -1,6 +1,8 @@
 package com.tieproost.fitnessapp.fake
 
 import com.tieproost.fitnessapp.data.database.model.DbExercise
+import com.tieproost.fitnessapp.data.database.model.DbFood
+import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.model.Settings
 import com.tieproost.fitnessapp.network.model.ApiExercise
 import com.tieproost.fitnessapp.network.model.ApiFood
@@ -41,6 +43,40 @@ object FakeDataSource {
                         photo = apiPhoto,
                     ),
                 ),
+        )
+
+    val foods: List<DbFood> =
+        listOf(
+            DbFood(
+                id = 1,
+                name = "apple",
+                servingQty = 2,
+                servingUnit = "medium",
+                calories = 50.0,
+                photo = "",
+                date = LocalDate.now(),
+                meal = MealType.Breakfast,
+            ),
+            DbFood(
+                id = 2,
+                name = "cookie",
+                servingQty = 3,
+                servingUnit = "small",
+                calories = 300.0,
+                photo = "",
+                date = LocalDate.now(),
+                meal = MealType.Snacks,
+            ),
+        )
+
+    val newFood =
+        ApiFood(
+            food_name = "steak",
+            serving_qty = 1,
+            serving_unit = "big",
+            nf_calories = 312.5,
+            photo = apiPhoto,
+            consumed_at = LocalDate.now().toString(),
         )
 
     val exercises =
