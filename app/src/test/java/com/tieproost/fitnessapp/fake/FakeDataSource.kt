@@ -115,4 +115,13 @@ object FakeDataSource {
             weight = 80.0,
             calorieGoal = 2500,
         )
+
+    val newSettings: Settings =
+        Settings(
+            sex = false,
+            birthDate = LocalDate.now().minusYears(41),
+            height = 150,
+            weight = 65.2,
+            calorieGoal = 1800,
+        )
 }
