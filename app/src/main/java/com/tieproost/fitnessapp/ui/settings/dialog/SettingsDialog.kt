@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
 @Composable
@@ -47,16 +48,17 @@ fun SettingsDialog(
                         onClick = hideDialog,
                         modifier =
                             Modifier.testTag(
-                                stringResource(NavigationDestinations.Settings.textId) + "Cancel",
+                                stringResource(NavigationDestinations.Settings.textId) +
+                                    stringResource(R.string.cancel),
                             ),
                     ) {
-                        Text(text = "Cancel")
+                        Text(text = stringResource(R.string.cancel))
                     }
                     TextButton(onClick = {
                         saveSettings()
                         hideDialog()
                     }) {
-                        Text(text = "OK")
+                        Text(text = stringResource(R.string.ok))
                     }
                 }
             }

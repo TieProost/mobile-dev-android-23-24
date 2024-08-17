@@ -14,7 +14,9 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Settings
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
 import com.tieproost.fitnessapp.ui.util.nullableToString
@@ -25,7 +27,7 @@ import java.time.Period
 fun SettingsCard(settings: Settings) {
     val age =
         if (settings.birthDate == null) {
-            " - "
+            stringResource(R.string.n_a)
         } else {
             Period.between(settings.birthDate, LocalDate.now()).years.toString()
         }
@@ -46,25 +48,25 @@ fun SettingsCard(settings: Settings) {
             Column(modifier = Modifier.fillMaxWidth(0.5f)) {
                 SettingItem(
                     icon = Icons.Filled.CalendarMonth,
-                    title = "Age",
+                    title = stringResource(R.string.age),
                     value = age,
                 )
                 SettingItem(
                     icon = Icons.Filled.Person,
-                    title = "Sex",
+                    title = stringResource(R.string.sex),
                     value = booleanToSexString(settings.sex),
                 )
             }
             Column {
                 SettingItem(
                     icon = Icons.Filled.Scale,
-                    title = "Weight",
-                    value = nullableToString(settings.weight, " - "),
+                    title = stringResource(R.string.weight),
+                    value = nullableToString(settings.weight, stringResource(R.string.n_a)),
                 )
                 SettingItem(
                     icon = Icons.Filled.Height,
-                    title = "Height",
-                    value = nullableToString(settings.height, " - "),
+                    title = stringResource(R.string.height),
+                    value = nullableToString(settings.height, stringResource(R.string.n_a)),
                 )
             }
         }

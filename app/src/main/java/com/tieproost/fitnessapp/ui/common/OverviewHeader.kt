@@ -15,7 +15,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun OverviewHeader(
@@ -36,7 +38,7 @@ fun OverviewHeader(
             modifier = Modifier.testTag("AddButton"),
             onClick = showDialog,
         ) {
-            Icon(Icons.Filled.Add, contentDescription = "")
+            Icon(Icons.Filled.Add, contentDescription = stringResource(R.string.add_button))
         }
     }
     HorizontalDivider()

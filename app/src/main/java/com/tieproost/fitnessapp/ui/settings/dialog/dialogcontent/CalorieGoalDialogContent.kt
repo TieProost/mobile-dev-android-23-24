@@ -16,10 +16,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.settings.dialog.components.DialogColumn
 
 @Composable
@@ -53,7 +55,7 @@ fun CalorieGoalDialogContent(
 
     val keyBoardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
 
-    DialogColumn(title = "Set daily intake goal") {
+    DialogColumn(title = stringResource(R.string.set_daily_intake_goal)) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -64,13 +66,13 @@ fun CalorieGoalDialogContent(
                 onValueChange = onTextFieldValueChange,
                 keyboardOptions = keyBoardOptions,
                 singleLine = true,
-                label = { Text("Goal") },
+                label = { Text(stringResource(R.string.goal)) },
                 modifier = Modifier.focusRequester(focusRequester),
                 isError = isError,
-                supportingText = { if (isError) Text("Please use only numbers.") },
+                supportingText = { if (isError) Text(stringResource(R.string.please_use_only_numbers)) },
             )
 
-            Text(text = "kcal")
+            Text(text = stringResource(R.string.kcal))
         }
     }
 

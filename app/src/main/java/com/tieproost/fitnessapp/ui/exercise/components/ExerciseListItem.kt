@@ -11,8 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Exercise
 import kotlin.math.roundToInt
 
@@ -20,12 +22,12 @@ import kotlin.math.roundToInt
 fun ExerciseListItem(exercise: Exercise) {
     ListItem(
         headlineContent = { Text(exercise.name) },
-        supportingContent = { Text("${exercise.durationMinutes} min.") },
-        trailingContent = { Text("${exercise.calories.roundToInt()} kcal") },
+        supportingContent = { Text("${exercise.durationMinutes} ${stringResource(R.string.minutes_abrv)} ") },
+        trailingContent = { Text("${exercise.calories.roundToInt()} ${stringResource(R.string.kcal)}") },
         leadingContent = {
             AsyncImage(
                 model = exercise.photo,
-                contentDescription = "",
+                contentDescription = exercise.name + stringResource(R.string.photo),
                 contentScale = ContentScale.Crop,
                 modifier =
                     Modifier
@@ -35,9 +37,7 @@ fun ExerciseListItem(exercise: Exercise) {
                         .border(
                             0.5.dp,
                             MaterialTheme.colorScheme.primaryContainer,
-                            RoundedCornerShape(
-                                4.dp,
-                            ),
+                            RoundedCornerShape(4.dp),
                         ),
             )
         },

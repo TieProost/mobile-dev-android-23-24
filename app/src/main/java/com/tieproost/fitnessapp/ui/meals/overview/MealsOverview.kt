@@ -9,7 +9,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.ui.common.OverviewHeader
 import com.tieproost.fitnessapp.ui.common.TotalCaloriesHeader
@@ -23,7 +25,7 @@ fun MealsOverview(
 ) {
     Column {
         TotalCaloriesHeader(
-            text = "Total eaten:",
+            text = stringResource(R.string.total_eaten),
             calories = uiListState.foods.sumOf { it.calories }.roundToInt(),
         )
 
@@ -34,7 +36,7 @@ fun MealsOverview(
                 val meal = uiListState.foods.filter { food -> food.meal == it }
                 if (meal.isEmpty()) {
                     Text(
-                        text = "No foods logged yet",
+                        text = stringResource(R.string.no_foods_logged_yet),
                         style = MaterialTheme.typography.titleSmall,
                         modifier = Modifier.padding(horizontal = 32.dp, vertical = 16.dp),
                     )

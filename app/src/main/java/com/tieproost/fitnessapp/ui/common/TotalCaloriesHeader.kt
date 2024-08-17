@@ -10,8 +10,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun TotalCaloriesHeader(
@@ -34,7 +36,7 @@ fun TotalCaloriesHeader(
             modifier = Modifier.padding(top = 16.dp),
         ) {
             Text(
-                "$calories kcal",
+                "$calories ${stringResource(R.string.kcal)} ",
                 modifier = Modifier.padding(8.dp),
                 fontWeight = FontWeight.Bold,
             )

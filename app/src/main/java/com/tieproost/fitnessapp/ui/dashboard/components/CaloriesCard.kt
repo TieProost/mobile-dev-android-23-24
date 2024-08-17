@@ -19,7 +19,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 import kotlin.math.roundToInt
 
 @Composable
@@ -44,8 +46,8 @@ fun CaloriesCard(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Column {
-                Text(text = "Calories", style = MaterialTheme.typography.titleLarge)
-                Text(text = "Remaining = Goal - Food + Exercise") // style = MaterialTheme.typography.titleSmall)
+                Text(text = stringResource(R.string.calories), style = MaterialTheme.typography.titleLarge)
+                Text(text = stringResource(R.string.remaining_goal_food_exercise)) // style = MaterialTheme.typography.titleSmall)
             }
 
             Row(
@@ -57,7 +59,7 @@ fun CaloriesCard(
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(text = remaining.toString(), style = MaterialTheme.typography.headlineMedium)
-                        Text(text = "Remaining")
+                        Text(text = stringResource(R.string.remaining))
                     }
                     CircularProgressIndicator(
                         progress = { 1f },
@@ -79,19 +81,19 @@ fun CaloriesCard(
                 ) {
                     SettingItem(
                         icon = Icons.Filled.Flag,
-                        title = "Base Goal",
+                        title = stringResource(R.string.base_goal),
                         value = goal.toString(),
                     )
 
                     SettingItem(
                         icon = Icons.Filled.Restaurant,
-                        title = "Food",
+                        title = stringResource(R.string.food),
                         value = foodCalories.roundToInt().toString(),
                     )
 
                     SettingItem(
                         icon = Icons.AutoMirrored.Filled.DirectionsRun,
-                        title = "Exercise",
+                        title = stringResource(R.string.exercise),
                         value = exerciseCalories.roundToInt().toString(),
                     )
                 }

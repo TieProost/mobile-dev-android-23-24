@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.data.database.model.asDomainExercise
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogButtons
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogLoadingOverlay
@@ -37,7 +38,7 @@ fun ExerciseMutateDialog(hideDialog: () -> Unit) {
             modifier = Modifier.testTag(stringResource(NavigationDestinations.Exercise.textId) + "AddDialog"),
             topBar = {
                 MutateDialogTopBar(
-                    title = "Add exercise",
+                    title = stringResource(R.string.add_exercise),
                     onBack = hideDialog,
                 )
             },
@@ -46,7 +47,7 @@ fun ExerciseMutateDialog(hideDialog: () -> Unit) {
                 MutateDialogTextField(
                     value = uiState.query,
                     onValueChange = exerciseMutateViewModel::updateQuery,
-                    placeholder = "- mountain biking 30min \n - walking 1 hour ",
+                    placeholder = stringResource(R.string.add_exercise_placeholder),
                     isError = apiState == ExerciseMutateApiState.Error,
                 )
 

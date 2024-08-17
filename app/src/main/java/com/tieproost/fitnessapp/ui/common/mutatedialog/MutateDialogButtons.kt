@@ -13,7 +13,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun MutateDialogButtons(
@@ -34,24 +36,24 @@ fun MutateDialogButtons(
             onClick = onSearch,
             enabled = !isLoading,
         ) {
-            Icon(Icons.Filled.Search, contentDescription = "")
-            Text(text = " add ")
+            Icon(Icons.Filled.Search, contentDescription = stringResource(R.string.search))
+            Text(text = stringResource(R.string.clear_list).replaceFirstChar { it.lowercase() })
         }
 
         Button(
             onClick = onClear,
             enabled = !isLoading && !isResultsEmpty,
         ) {
-            Icon(Icons.Filled.Refresh, contentDescription = " save")
-            Text(text = " clear")
+            Icon(Icons.Filled.Refresh, contentDescription = stringResource(R.string.clear_list))
+            Text(text = stringResource(R.string.clear_list).replaceFirstChar { it.lowercase() })
         }
 
         Button(
             onClick = onSave,
             enabled = !isLoading && !isResultsEmpty,
         ) {
-            Icon(Icons.Filled.Save, contentDescription = "Save")
-            Text(text = " save")
+            Icon(Icons.Filled.Save, contentDescription = stringResource(R.string.save))
+            Text(text = stringResource(R.string.save).replaceFirstChar { it.lowercase() })
         }
     }
 }

@@ -8,7 +8,9 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 
 @Composable
 fun MutateDialogTextField(
@@ -27,7 +29,7 @@ fun MutateDialogTextField(
                     .height(100.dp),
             placeholder = { Text(text = placeholder) },
             supportingText = {
-                if (isError) Text(text = "No match found.")
+                if (isError) Text(text = stringResource(R.string.no_match_found))
             },
             isError = isError,
         )

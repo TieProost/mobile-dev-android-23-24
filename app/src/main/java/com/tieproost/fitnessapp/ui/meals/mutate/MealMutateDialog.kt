@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.data.database.model.asDomainFood
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogButtons
@@ -41,7 +42,7 @@ fun MealMutateDialog(
             modifier = Modifier.testTag(stringResource(NavigationDestinations.Meals.textId) + "AddDialog"),
             topBar = {
                 MutateDialogTopBar(
-                    title = "Add ${mealType.name}",
+                    title = stringResource(R.string.add) + " " + mealType.name,
                     onBack = hideDialog,
                 )
             },
@@ -50,7 +51,7 @@ fun MealMutateDialog(
                 MutateDialogTextField(
                     value = uiState.query,
                     onValueChange = mealMutateViewModel::updateQuery,
-                    placeholder = "- bowl of cereal with milk \n- 1 small apple",
+                    placeholder = stringResource(R.string.add_meal_placeholder),
                     isError = apiState == MealsMutateApiState.Error,
                 )
 

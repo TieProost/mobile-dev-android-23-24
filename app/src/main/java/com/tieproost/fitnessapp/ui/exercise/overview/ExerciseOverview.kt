@@ -10,7 +10,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Exercise
 import com.tieproost.fitnessapp.ui.common.OverviewHeader
 import com.tieproost.fitnessapp.ui.common.TotalCaloriesHeader
@@ -24,15 +26,15 @@ fun ExerciseOverview(
 ) {
     Column {
         TotalCaloriesHeader(
-            text = "Total burned:",
+            text = stringResource(R.string.total_burned),
             calories = exercises.sumOf { it.calories }.roundToInt(),
         )
 
-        OverviewHeader(title = "Exercises", showDialog = showDialog)
+        OverviewHeader(title = stringResource(R.string.exercises), showDialog = showDialog)
 
         if (exercises.isEmpty()) {
             Text(
-                text = "No exercises logged yet",
+                text = stringResource(R.string.no_exercises_logged_yet),
                 style = MaterialTheme.typography.titleSmall,
                 modifier = Modifier.padding(horizontal = 32.dp, vertical = 16.dp),
             )

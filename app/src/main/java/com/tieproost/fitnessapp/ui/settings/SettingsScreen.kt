@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Settings
 import com.tieproost.fitnessapp.ui.common.ErrorScreen
 import com.tieproost.fitnessapp.ui.common.LoadingScreen
@@ -130,49 +131,49 @@ fun SettingsOverview(
         modifier = Modifier.verticalScroll(rememberScrollState()),
     ) {
         Text(
-            text = "Settings: ",
+            text = "${stringResource(R.string.birthday)}: ",
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(16.dp),
         )
 
         SettingListItem(
             onClick = showBirthdayDialog,
-            title = "Birthday",
-            value = "${settings.birthDate ?: " - "}",
+            title = stringResource(R.string.birthday),
+            value = "${settings.birthDate ?: stringResource(R.string.n_a)}",
         )
 
         SettingListItem(
             onClick = showSexDialog,
-            title = "Sex",
+            title = stringResource(R.string.sex),
             value = booleanToSexString(settings.sex),
         )
 
         SettingListItem(
             onClick = showHeightDialog,
-            title = "Height",
-            value = "${settings.height ?: " - "} cm",
+            title = stringResource(R.string.height),
+            value = "${settings.height ?: stringResource(R.string.n_a)} ${stringResource(R.string.cm)}",
         )
 
         SettingListItem(
             onClick = showWeightDialog,
-            title = "Weight",
-            value = "${settings.weight ?: " - "} kg",
+            title = stringResource(R.string.weight),
+            value = "${settings.weight ?: stringResource(R.string.n_a)} ${stringResource(R.string.kg)}",
         )
         SettingListItem(
             onClick = showCalorieGoalDialog,
-            title = "Daily Goal",
-            value = "${settings.calorieGoal } kcal",
+            title = stringResource(R.string.daily_goal),
+            value = "${settings.calorieGoal } ${stringResource(R.string.kcal)}",
         )
 
         Text(
-            text = "About: ",
+            text = "${stringResource(R.string.about)}: ",
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(16.dp),
         )
 
         ListItem(
             headlineContent = {
-                Text(text = "Build with Nutrionix API © All rights reserved.")
+                Text(text = stringResource(R.string.about_text))
             },
         )
     }

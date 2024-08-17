@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
 @Composable
@@ -39,16 +40,16 @@ fun TopNavigationBar(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
                     imageVector = Icons.Filled.SportsGymnastics,
-                    contentDescription = "",
+                    contentDescription = stringResource(R.string.app_logo),
                     modifier = Modifier.size(40.dp),
                 )
-                Text("FitnessApp")
+                Text(stringResource(R.string.app_name))
             }
         },
         actions = {
             Row(modifier = Modifier.fillMaxWidth(0.25f)) {
                 NavigationBarItem(
-                    icon = { Icon(Icons.Filled.Settings, "Settongs", Modifier) },
+                    icon = { Icon(Icons.Filled.Settings, Icons.Filled.Settings.name, Modifier) },
                     selected = selected,
                     enabled = !selected,
                     onClick = navigateToSettings,

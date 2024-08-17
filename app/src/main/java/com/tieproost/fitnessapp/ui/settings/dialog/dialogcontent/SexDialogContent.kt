@@ -13,6 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.settings.dialog.components.DialogColumn
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -21,10 +23,15 @@ fun SexDialogContent(
     onValueChange: (String) -> Unit,
     value: Boolean?,
 ) {
-    val options = listOf(" - ", "Male", "Female")
+    val options =
+        listOf(
+            stringResource(R.string.n_a),
+            stringResource(R.string.male),
+            stringResource(R.string.female),
+        )
     var expanded by remember { mutableStateOf(false) }
 
-    DialogColumn(title = "Select sex") {
+    DialogColumn(title = stringResource(R.string.select_sex)) {
         ExposedDropdownMenuBox(
             expanded = expanded,
             onExpandedChange = {
@@ -42,14 +49,17 @@ fun SexDialogContent(
                         }
                     },
                 onValueChange = { },
-                label = { Text("Sex") },
+                label = { Text(stringResource(R.string.sex)) },
                 trailingIcon = {
                     ExposedDropdownMenuDefaults.TrailingIcon(
                         expanded = expanded,
                     )
                 },
                 colors = ExposedDropdownMenuDefaults.textFieldColors(),
-                modifier = Modifier.menuAnchor().fillMaxWidth(),
+                modifier =
+                    Modifier
+                        .menuAnchor()
+                        .fillMaxWidth(),
             )
             ExposedDropdownMenu(
                 expanded = expanded,
