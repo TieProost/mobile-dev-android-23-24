@@ -38,8 +38,17 @@ fun HeightDialogContent(
         )
     }
 
+    var isError by remember { mutableStateOf(false) }
+
     val onTextFieldValueChange = { it: TextFieldValue ->
-        textFieldValueState = it.copy(text = onValueChange(it.text))
+        val newValue = onValueChange(it.text)
+        if (it.text == newValue) {
+            textFieldValueState = it.copy(text = newValue)
+            isError = false
+        } else {
+            textFieldValueState = it.copy(text = newValue)
+            isError = true
+        }
     }
 
     val keyBoardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
@@ -57,6 +66,8 @@ fun HeightDialogContent(
                 singleLine = true,
                 label = { Text("Height") },
                 modifier = Modifier.focusRequester(focusRequester),
+                isError = isError,
+                supportingText = { if (isError) Text("Please use only numbers.") },
             )
 
             Text(text = "cm")
