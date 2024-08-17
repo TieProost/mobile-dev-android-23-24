@@ -42,7 +42,6 @@ fun MealsOverview(
                     Text(
                         text = "No foods logged yet",
                         style = MaterialTheme.typography.titleSmall,
-                        color = MaterialTheme.colorScheme.onSecondary,
                         modifier = Modifier.padding(horizontal = 32.dp, vertical = 16.dp),
                     )
                 } else {
