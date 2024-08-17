@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.ui.settings
+package com.tieproost.fitnessapp.ui.settings.dialog
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

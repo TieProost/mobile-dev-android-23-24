@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.ui.settings.dialog
+package com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.DropdownMenuItem

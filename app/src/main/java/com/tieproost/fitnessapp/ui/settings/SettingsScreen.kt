@@ -27,10 +27,11 @@ import com.tieproost.fitnessapp.model.Settings
 import com.tieproost.fitnessapp.ui.common.ErrorScreen
 import com.tieproost.fitnessapp.ui.common.LoadingScreen
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
-import com.tieproost.fitnessapp.ui.settings.dialog.CalorieGoalDialogContent
-import com.tieproost.fitnessapp.ui.settings.dialog.HeightDialogContent
-import com.tieproost.fitnessapp.ui.settings.dialog.SexDialogContent
-import com.tieproost.fitnessapp.ui.settings.dialog.WeightDialogContent
+import com.tieproost.fitnessapp.ui.settings.dialog.SettingsDialog
+import com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent.CalorieGoalDialogContent
+import com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent.HeightDialogContent
+import com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent.SexDialogContent
+import com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent.WeightDialogContent
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
 import com.tieproost.fitnessapp.ui.util.nullableToString
 

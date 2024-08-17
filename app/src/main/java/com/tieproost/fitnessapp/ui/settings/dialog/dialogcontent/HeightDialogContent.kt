@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.ui.settings.dialog
+package com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.ui.settings.dialog.components.DialogColumn
 
 @Composable
-fun CalorieGoalDialogContent(
+fun HeightDialogContent(
     onValueChange: (String) -> String,
     value: String,
 ) {
@@ -51,9 +51,9 @@ fun CalorieGoalDialogContent(
         }
     }
 
-    val keyBoardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
+    val keyBoardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
 
-    DialogColumn(title = "Set daily intake goal") {
+    DialogColumn(title = "Set height") {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -64,13 +64,13 @@ fun CalorieGoalDialogContent(
                 onValueChange = onTextFieldValueChange,
                 keyboardOptions = keyBoardOptions,
                 singleLine = true,
-                label = { Text("Goal") },
+                label = { Text("Height") },
                 modifier = Modifier.focusRequester(focusRequester),
                 isError = isError,
                 supportingText = { if (isError) Text("Please use only numbers.") },
             )
 
-            Text(text = "kcal")
+            Text(text = "cm")
         }
     }
 
