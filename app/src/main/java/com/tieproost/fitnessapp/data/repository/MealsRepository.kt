@@ -1,6 +1,5 @@
 package com.tieproost.fitnessapp.data.repository
 
-import android.content.Context
 import com.tieproost.fitnessapp.data.database.dao.FoodDao
 import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.data.database.model.asDbFood
@@ -30,7 +29,6 @@ interface MealsRepository {
 class CachingMealsRepository(
     private val fitnessApiService: FitnessApiService,
     private val foodDao: FoodDao,
-    context: Context,
 ) : MealsRepository {
     override suspend fun searchMeal(query: String): Flow<ApiMeal> =
         flow {

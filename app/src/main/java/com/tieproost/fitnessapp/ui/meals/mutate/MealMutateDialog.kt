@@ -73,7 +73,7 @@ fun MealMutateDialog(
                 val lazyListState = rememberLazyListState()
                 LazyColumn(state = lazyListState, modifier = Modifier.padding(4.dp)) {
                     items(uiState.results) { it ->
-                        FoodListItem(it.asDomainFood())
+                        FoodListItem(it.asDomainFood(mealType))
                     }
                 }
 

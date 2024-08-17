@@ -57,10 +57,10 @@ fun ApiFood.asDbFood(mealType: MealType): DbFood =
         photo = photo.thumb,
     )
 
-fun ApiFood.asDomainFood(): Food =
+fun ApiFood.asDomainFood(mealType: MealType): Food =
     Food(
         date = LocalDate.now(),
-        meal = MealType.Breakfast,
+        meal = mealType,
         name = food_name,
         servingQty = serving_qty,
         servingUnit = serving_unit,
