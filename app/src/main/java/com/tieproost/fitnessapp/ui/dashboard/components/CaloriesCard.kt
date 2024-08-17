@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.tieproost.fitnessapp.ui.dashboard.SettingItem
 import kotlin.math.roundToInt
 
 @Composable
@@ -64,62 +65,41 @@ fun CaloriesCard(
                     CircularProgressIndicator(
                         progress = { 1f },
                         modifier = Modifier.size(160.dp),
-                        color = MaterialTheme.colorScheme.onSecondary,
-                        strokeWidth = 16.dp,
+                        color = MaterialTheme.colorScheme.surface,
+                        strokeWidth = 20.dp,
                     )
 
                     CircularProgressIndicator(
                         progress = { progress },
                         modifier = Modifier.size(160.dp),
                         color = MaterialTheme.colorScheme.primaryContainer,
-                        strokeWidth = 16.dp,
+                        strokeWidth = 20.dp,
                     )
                 }
                 Column(
                     modifier = Modifier.weight(1f),
                     verticalArrangement = Arrangement.SpaceBetween,
                 ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.Flag,
-                            contentDescription = "todo",
-                            modifier = Modifier.padding(12.dp),
-                        )
-                        Column {
-                            Text("Base Goal")
-                            Text(text = goal.toString())
-                        }
-                    }
+                    SettingItem(
+                        icon = Icons.Filled.Flag,
+                        title = "Base Goal",
+                        value = goal.toString(),
+                    )
 
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.Restaurant,
-                            contentDescription = "todo",
-                            modifier = Modifier.padding(12.dp),
-                        )
-                        Column {
-                            Text("Food")
-                            Text(text = foodCalories.roundToInt().toString())
-                        }
-                    }
+                    SettingItem(
+                        icon = Icons.Filled.Restaurant,
+                        title = "Food",
+                        value = foodCalories.roundToInt().toString(),
+                    )
 
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.DirectionsRun,
-                            contentDescription = "todo",
-                            modifier = Modifier.padding(12.dp),
-                        )
-                        Column {
-                            Text("Exercise")
-                            Text(text = exerciseCalories.roundToInt().toString())
-                        }
-                    }
+                    SettingItem(
+                        icon = Icons.AutoMirrored.Filled.DirectionsRun,
+                        title = "Exercise",
+                        value = exerciseCalories.roundToInt().toString(),
+                    )
+
+
+
                 }
             }
         }

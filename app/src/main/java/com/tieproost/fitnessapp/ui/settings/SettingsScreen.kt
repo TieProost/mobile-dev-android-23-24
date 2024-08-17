@@ -18,7 +18,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -89,9 +88,9 @@ fun SettingsScreen() {
 
     Box(
         modifier =
-        Modifier
-            .fillMaxHeight()
-            .testTag(stringResource(NavigationDestinations.Settings.textId)),
+            Modifier
+                .fillMaxHeight()
+                .testTag(stringResource(NavigationDestinations.Settings.textId)),
     ) {
         when (apiState) {
             is SettingsApiState.Loading -> LoadingScreen()
@@ -186,9 +185,9 @@ fun SettingListItem(
 ) {
     ListItem(
         modifier =
-        Modifier
-            .clickable { onClick() }
-            .testTag(stringResource(NavigationDestinations.Settings.textId) + "AddButton"),
+            Modifier
+                .clickable { onClick() }
+                .testTag(stringResource(NavigationDestinations.Settings.textId) + "AddButton"),
         leadingContent = {
             Text(text = title)
         },
@@ -197,7 +196,7 @@ fun SettingListItem(
                 text = value,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.End,
-                color = Color.Cyan,
+                color = MaterialTheme.colorScheme.secondary,
             )
         },
     )

@@ -35,7 +35,7 @@ fun ExerciseScreen() {
             is ExerciseOverviewApiState.Error -> ErrorScreen()
             is ExerciseOverviewApiState.Success ->
                 ExerciseOverview(
-                    uiListState = uiListState,
+                    exercises = uiListState.exercises,
                     showDialog = exerciseOverviewViewModel::showDialog,
                 )
         }

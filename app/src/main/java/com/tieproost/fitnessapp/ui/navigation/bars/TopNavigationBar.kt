@@ -21,7 +21,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
-// TODO
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun TopNavigationBar(
@@ -47,16 +46,9 @@ fun TopNavigationBar(
             }
         },
         actions = {
-//            IconButton(onClick = navigateToSettings) {
-//                Icon(
-//                    imageVector = Icons.Filled.Settings,
-//                    contentDescription = "Localized description",
-//                )
-//            }
             Row(modifier = Modifier.fillMaxWidth(0.25f)) {
                 NavigationBarItem(
                     icon = { Icon(Icons.Filled.Settings, "Settongs", Modifier) },
-//                label = { Text(stringResource(destination.textId)) },
                     selected = selected,
                     enabled = !selected,
                     onClick = navigateToSettings,

@@ -47,10 +47,10 @@ fun DashboardScreen() {
 
     Box(
         modifier =
-        Modifier
-            .fillMaxHeight()
-            .verticalScroll(rememberScrollState())
-            .testTag(stringResource(NavigationDestinations.Dashboard.textId)),
+            Modifier
+                .fillMaxHeight()
+                .verticalScroll(rememberScrollState())
+                .testTag(stringResource(NavigationDestinations.Dashboard.textId)),
     ) {
         when (apiState) {
             is DashboardApiState.Loading -> LoadingScreen()
@@ -105,9 +105,9 @@ fun SettingsCard(settings: Settings) {
     ) {
         Row(
             modifier =
-            Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
         ) {
             Column(modifier = Modifier.fillMaxWidth(0.5f)) {
                 SettingItem(
@@ -138,7 +138,7 @@ fun SettingsCard(settings: Settings) {
 }
 
 @Composable
-private fun SettingItem(
+fun SettingItem(
     title: String,
     value: String,
     icon: ImageVector,
@@ -150,10 +150,10 @@ private fun SettingItem(
             imageVector = icon,
             contentDescription = title,
             modifier = Modifier.padding(12.dp),
-            tint = MaterialTheme.colorScheme.onPrimaryContainer,
+            tint = MaterialTheme.colorScheme.secondary,
         )
         Column {
-            Text(text = title)
+            Text(text = title, color = MaterialTheme.colorScheme.secondary)
             Text(text = value)
         }
     }

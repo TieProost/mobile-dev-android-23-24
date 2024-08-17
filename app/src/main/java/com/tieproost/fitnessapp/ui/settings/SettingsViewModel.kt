@@ -121,9 +121,7 @@ class SettingsViewModel(
     }
 
     fun onWeightChange(inputString: String): String {
-        var outputString = ""
-// todo
-        outputString =
+        var outputString =
             if (inputString.count { it == '.' } > 1) {
                 _uiState.value.settingsForm.weight
                     ?.toBigDecimal()

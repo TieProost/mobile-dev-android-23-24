@@ -18,7 +18,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.ui.common.OverviewHeader
+import com.tieproost.fitnessapp.ui.common.TotalCaloriesHeader
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
+import kotlin.math.roundToInt
 
 @Composable
 fun MealsOverview(
@@ -26,24 +28,10 @@ fun MealsOverview(
     showDialog: (MealType) -> Unit,
 ) {
     Column {
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Text(
-                "Total eaten:",
-                modifier = Modifier.padding(top = 24.dp, end = 8.dp),
-            )
-            Card(
-                colors =
-                    CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
-                    ),
-                modifier = Modifier.padding(top = 16.dp),
-            ) {
-                Text("523 kcal", modifier = Modifier.padding(8.dp), fontWeight = FontWeight.Bold)
-            }
-        }
+        TotalCaloriesHeader(
+            text = "Total eaten:",
+            calories = uiListState.foods.sumOf { it.calories }.roundToInt(),
+        )
 
         LazyColumn(state = rememberLazyListState()) {
             items(MealType.values()) {
@@ -64,3 +52,5 @@ fun MealsOverview(
         }
     }
 }
+
+
