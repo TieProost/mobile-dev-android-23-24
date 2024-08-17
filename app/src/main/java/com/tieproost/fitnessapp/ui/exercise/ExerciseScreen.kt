@@ -27,6 +27,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.tieproost.fitnessapp.ui.common.ErrorScreen
+import com.tieproost.fitnessapp.ui.common.LoadingScreen
 import com.tieproost.fitnessapp.ui.exercise.mutate.ExerciseListItem
 import com.tieproost.fitnessapp.ui.exercise.mutate.ExerciseMutateDialog
 import com.tieproost.fitnessapp.ui.exercise.overview.ExerciseListState
@@ -43,13 +45,13 @@ fun ExerciseScreen() {
 
     Box(
         modifier =
-            Modifier
-                .fillMaxHeight()
-                .testTag(stringResource(NavigationDestinations.Exercise.textId)),
+        Modifier
+            .fillMaxHeight()
+            .testTag(stringResource(NavigationDestinations.Exercise.textId)),
     ) {
         when (apiState) {
-            is ExerciseOverviewApiState.Loading -> Text("Loading...")
-            is ExerciseOverviewApiState.Error -> Text("Couldn't load...")
+            is ExerciseOverviewApiState.Loading -> LoadingScreen()
+            is ExerciseOverviewApiState.Error -> ErrorScreen()
             is ExerciseOverviewApiState.Success ->
                 ExerciseOverview(
                     uiListState = uiListState,
@@ -93,9 +95,9 @@ fun ExerciseOverview(
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
         ) {
             Text("Exercise", modifier = Modifier)
             Button(

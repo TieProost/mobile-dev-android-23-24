@@ -31,6 +31,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.model.Settings
+import com.tieproost.fitnessapp.ui.common.ErrorScreen
+import com.tieproost.fitnessapp.ui.common.LoadingScreen
 import com.tieproost.fitnessapp.ui.dashboard.components.CaloriesCard
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
@@ -45,14 +47,14 @@ fun DashboardScreen() {
 
     Box(
         modifier =
-            Modifier
-                .fillMaxHeight()
-                .verticalScroll(rememberScrollState())
-                .testTag(stringResource(NavigationDestinations.Dashboard.textId)),
+        Modifier
+            .fillMaxHeight()
+            .verticalScroll(rememberScrollState())
+            .testTag(stringResource(NavigationDestinations.Dashboard.textId)),
     ) {
         when (apiState) {
-            is DashboardApiState.Loading -> Text("Loading...")
-            is DashboardApiState.Error -> Text("Couldn't load...")
+            is DashboardApiState.Loading -> LoadingScreen()
+            is DashboardApiState.Error -> ErrorScreen()
             is DashboardApiState.Success ->
                 DashBoardOverview(
                     uiState = uiState,
@@ -103,9 +105,9 @@ fun SettingsCard(settings: Settings) {
     ) {
         Row(
             modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
+            Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
         ) {
             Column(modifier = Modifier.fillMaxWidth(0.5f)) {
                 SettingItem(

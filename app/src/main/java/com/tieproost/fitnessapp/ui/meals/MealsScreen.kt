@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.tieproost.fitnessapp.ui.common.ErrorScreen
+import com.tieproost.fitnessapp.ui.common.LoadingScreen
 import com.tieproost.fitnessapp.ui.meals.mutate.MealMutateDialog
 import com.tieproost.fitnessapp.ui.meals.overview.MealsOverview
 import com.tieproost.fitnessapp.ui.meals.overview.MealsOverviewApiState
@@ -25,13 +27,13 @@ fun MealsScreen() {
 
     Box(
         modifier =
-            Modifier
-                .fillMaxHeight()
-                .testTag(stringResource(NavigationDestinations.Meals.textId)),
+        Modifier
+            .fillMaxHeight()
+            .testTag(stringResource(NavigationDestinations.Meals.textId)),
     ) {
         when (apiState) {
-            is MealsOverviewApiState.Loading -> Text("Loading...")
-            is MealsOverviewApiState.Error -> Text("Couldn't load...")
+            is MealsOverviewApiState.Loading -> LoadingScreen()
+            is MealsOverviewApiState.Error -> ErrorScreen()
             is MealsOverviewApiState.Success ->
                 MealsOverview(
                     uiListState = uiListState,

@@ -25,6 +25,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.model.Settings
+import com.tieproost.fitnessapp.ui.common.ErrorScreen
+import com.tieproost.fitnessapp.ui.common.LoadingScreen
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import com.tieproost.fitnessapp.ui.settings.dialog.CalorieGoalDialogContent
 import com.tieproost.fitnessapp.ui.settings.dialog.HeightDialogContent
@@ -87,13 +89,13 @@ fun SettingsScreen() {
 
     Box(
         modifier =
-            Modifier
-                .fillMaxHeight()
-                .testTag(stringResource(NavigationDestinations.Settings.textId)),
+        Modifier
+            .fillMaxHeight()
+            .testTag(stringResource(NavigationDestinations.Settings.textId)),
     ) {
         when (apiState) {
-            is SettingsApiState.Loading -> Text("Loading...")
-            is SettingsApiState.Error -> Text("Couldn't load...")
+            is SettingsApiState.Loading -> LoadingScreen()
+            is SettingsApiState.Error -> ErrorScreen()
             is SettingsApiState.Success ->
                 SettingsOverview(
                     settings = uiObjectState.settings,
@@ -184,9 +186,9 @@ fun SettingListItem(
 ) {
     ListItem(
         modifier =
-            Modifier
-                .clickable { onClick() }
-                .testTag(stringResource(NavigationDestinations.Settings.textId) + "AddButton"),
+        Modifier
+            .clickable { onClick() }
+            .testTag(stringResource(NavigationDestinations.Settings.textId) + "AddButton"),
         leadingContent = {
             Text(text = title)
         },

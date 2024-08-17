@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Save
 import androidx.compose.material.icons.filled.Search
@@ -52,7 +53,7 @@ fun MealMutateDialog(
             topBar = {
                 TopAppBar(title = { Text("Add ${mealType.name}") }, navigationIcon = {
                     IconButton(onClick = hideDialog) {
-                        Icon(Icons.Filled.ArrowBack, "Menu back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Menu back")
                     }
                 })
             },
