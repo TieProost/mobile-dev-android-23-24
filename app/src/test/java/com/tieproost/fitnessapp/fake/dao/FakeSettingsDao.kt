@@ -21,6 +21,7 @@ class FakeSettingsDao(
     }
 
     override suspend fun insert(item: DbSettings) {
+        settings = item
     }
 
     override suspend fun update(item: DbSettings) {

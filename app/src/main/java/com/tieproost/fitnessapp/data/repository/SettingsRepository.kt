@@ -17,7 +17,7 @@ class CachingSettingsRepository(
     private val settingsDao: SettingsDao,
 ) : SettingsRepository {
     override suspend fun save(settings: Settings) {
-        settingsDao.update(settings.asDbSettings())
+        settingsDao.insert(settings.asDbSettings())
     }
 
     override fun getSettings(): Flow<Settings> = settingsDao.get().map { it?.asDomainSettings() ?: Settings() }

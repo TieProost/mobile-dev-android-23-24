@@ -5,17 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.tieproost.fitnessapp.data.database.dao.ExerciseDao
 import com.tieproost.fitnessapp.data.database.dao.FoodDao
 import com.tieproost.fitnessapp.data.database.dao.SettingsDao
 import com.tieproost.fitnessapp.data.database.model.DbExercise
 import com.tieproost.fitnessapp.data.database.model.DbFood
 import com.tieproost.fitnessapp.data.database.model.DbSettings
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.util.concurrent.Executors
 
 /**
  * Database class with a singleton Instance object.
@@ -40,24 +35,9 @@ abstract class RoomDb : RoomDatabase() {
                 Room
                     .databaseBuilder(context, RoomDb::class.java, "fitness_database")
                     .fallbackToDestructiveMigration()
-                    .addCallback(seedDatabaseCallback(context))
                     .build()
                     .also { instance = it }
             }
         }
-
-        @OptIn(DelicateCoroutinesApi::class)
-        private fun seedDatabaseCallback(context: Context): Callback =
-            object : Callback() {
-                override fun onCreate(db: SupportSQLiteDatabase) {
-                    super.onCreate(db)
-                    Executors.newSingleThreadExecutor().execute {
-                        val settingsDao = getDatabase(context).settingsDao()
-                        GlobalScope.launch {
-                            settingsDao.insert(DbSettings())
-                        }
-                    }
-                }
-            }
     }
 }
