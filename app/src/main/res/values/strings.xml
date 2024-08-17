@@ -51,4 +51,5 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="minutes_abrv">min.</string>
+    <string name="clear">clear</string>
 </resources>

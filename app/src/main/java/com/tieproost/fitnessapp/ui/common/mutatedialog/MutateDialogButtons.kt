@@ -30,14 +30,14 @@ fun MutateDialogButtons(
             Modifier
                 .padding(horizontal = 32.dp)
                 .fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         Button(
             onClick = onSearch,
             enabled = !isLoading,
         ) {
             Icon(Icons.Filled.Search, contentDescription = stringResource(R.string.search))
-            Text(text = stringResource(R.string.clear_list).replaceFirstChar { it.lowercase() })
+            Text(text = stringResource(R.string.add).replaceFirstChar { it.lowercase() })
         }
 
         Button(
@@ -45,7 +45,7 @@ fun MutateDialogButtons(
             enabled = !isLoading && !isResultsEmpty,
         ) {
             Icon(Icons.Filled.Refresh, contentDescription = stringResource(R.string.clear_list))
-            Text(text = stringResource(R.string.clear_list).replaceFirstChar { it.lowercase() })
+            Text(text = stringResource(R.string.clear))
         }
 
         Button(
