@@ -1,41 +1,30 @@
 package com.tieproost.fitnessapp.ui.meals.mutate
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Save
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.data.database.model.asDomainFood
+import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogButtons
+import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogLoadingOverlay
+import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogTextField
+import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogTopBar
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class)
 fun MealMutateDialog(
     hideDialog: () -> Unit,
     mealType: MealType,
@@ -51,39 +40,37 @@ fun MealMutateDialog(
         Scaffold(
             modifier = Modifier.testTag(stringResource(NavigationDestinations.Meals.textId) + "AddDialog"),
             topBar = {
-                TopAppBar(title = { Text("Add ${mealType.name}") }, navigationIcon = {
-                    IconButton(onClick = hideDialog) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Menu back")
-                    }
-                })
+                MutateDialogTopBar(
+                    title = "Add ${mealType.name}",
+                    onBack = hideDialog,
+                )
             },
         ) {
             Column(modifier = Modifier.padding(it)) {
-                TextField(
+                MutateDialogTextField(
                     value = uiState.query,
                     onValueChange = mealMutateViewModel::updateQuery,
-                    modifier = Modifier.fillMaxWidth(),
-                    placeholder = { Text(text = "placeholder") },
+                    placeholder = "- bowl of cereal with milk \n- 1 small apple",
+                    isError = apiState == MealsMutateApiState.Error,
                 )
 
-                Button(onClick = mealMutateViewModel::search, enabled = apiState != MealsMutateApiState.Loading) {
-                    Text(text = "Search")
-                    Icon(Icons.Filled.Search, contentDescription = "")
-                }
+                MutateDialogButtons(
+                    onSearch = mealMutateViewModel::search,
+                    onClear = mealMutateViewModel::clearResults,
+                    onSave = {
+                        mealMutateViewModel.addMeal(mealType)
+                        hideDialog()
+                    },
+                    isLoading = apiState == MealsMutateApiState.Loading,
+                    isResultsEmpty = uiState.results.isEmpty(),
+                )
 
-                val lazyListState = rememberLazyListState()
-                LazyColumn(state = lazyListState, modifier = Modifier.padding(4.dp)) {
-                    items(uiState.results) { it ->
-                        FoodListItem(it.asDomainFood(mealType))
+                MutateDialogLoadingOverlay(apiState == MealsMutateApiState.Loading) {
+                    LazyColumn(state = rememberLazyListState()) {
+                        items(uiState.results) { it ->
+                            FoodListItem(it.asDomainFood(mealType))
+                        }
                     }
-                }
-
-                Button(onClick = {
-                    mealMutateViewModel.addMeal(mealType)
-                    hideDialog()
-                }, enabled = apiState == MealsMutateApiState.Success && uiState.results.isNotEmpty()) {
-                    Text(text = "Save")
-                    Icon(Icons.Filled.Save, contentDescription = "Save")
                 }
             }
         }

@@ -69,6 +69,14 @@ class ExerciseMutateViewModel(
         }
     }
 
+    fun clearResults() {
+        _uiState.update {
+            it.copy(
+                results = listOf(),
+            )
+        }
+    }
+
     companion object {
         val Factory: ViewModelProvider.Factory =
             viewModelFactory {

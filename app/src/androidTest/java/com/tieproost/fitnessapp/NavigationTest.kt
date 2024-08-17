@@ -101,7 +101,7 @@ class NavigationTest {
 
     private fun ComposeContentTestRule.openDialog(name: String) {
         this
-            .onAllNodesWithTag(name + "AddButton")[0]
+            .onAllNodesWithTag("AddButton")[0]
             .assertIsDisplayed()
             .performClick()
         this

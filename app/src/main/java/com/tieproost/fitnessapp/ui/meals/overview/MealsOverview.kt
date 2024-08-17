@@ -17,8 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.tieproost.fitnessapp.data.database.model.MealType
+import com.tieproost.fitnessapp.ui.common.OverviewHeader
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
-import com.tieproost.fitnessapp.ui.meals.components.MealTypeHeader
 
 @Composable
 fun MealsOverview(
@@ -47,7 +47,7 @@ fun MealsOverview(
 
         LazyColumn(state = rememberLazyListState()) {
             items(MealType.values()) {
-                MealTypeHeader(it, openDialog = { showDialog(it) })
+                OverviewHeader(title = it.name, showDialog = { showDialog(it) })
 
                 val meal = uiListState.foods.filter { food -> food.meal == it }
                 if (meal.isEmpty()) {

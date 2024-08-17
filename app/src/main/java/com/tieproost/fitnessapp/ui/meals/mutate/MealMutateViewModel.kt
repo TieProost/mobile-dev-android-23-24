@@ -29,6 +29,7 @@ class MealMutateViewModel(
     val uiState: StateFlow<MealMutateState> = _uiState.asStateFlow()
 
     fun updateQuery(query: String) {
+        apiState = MealsMutateApiState.Success
         _uiState.update {
             it.copy(
                 query = query,
@@ -65,6 +66,14 @@ class MealMutateViewModel(
         _uiState.update { currentState ->
             currentState.copy(
                 query = "",
+                results = listOf(),
+            )
+        }
+    }
+
+    fun clearResults() {
+        _uiState.update {
+            it.copy(
                 results = listOf(),
             )
         }

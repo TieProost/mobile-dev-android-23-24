@@ -2,7 +2,6 @@ package com.tieproost.fitnessapp.ui.meals
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -27,9 +26,9 @@ fun MealsScreen() {
 
     Box(
         modifier =
-        Modifier
-            .fillMaxHeight()
-            .testTag(stringResource(NavigationDestinations.Meals.textId)),
+            Modifier
+                .fillMaxHeight()
+                .testTag(stringResource(NavigationDestinations.Meals.textId)),
     ) {
         when (apiState) {
             is MealsOverviewApiState.Loading -> LoadingScreen()
