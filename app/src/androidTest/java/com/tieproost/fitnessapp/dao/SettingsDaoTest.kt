@@ -6,10 +6,13 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.tieproost.fitnessapp.data.database.RoomDb
 import com.tieproost.fitnessapp.data.database.dao.SettingsDao
+import com.tieproost.fitnessapp.data.database.model.DbSettings
 import com.tieproost.fitnessapp.data.database.model.asDbSettings
 import com.tieproost.fitnessapp.data.database.model.asDomainSettings
 import com.tieproost.fitnessapp.model.Settings
+import junit.framework.TestCase
 import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -32,6 +35,8 @@ class SettingsDaoTest {
             weight = 80.0,
             calorieGoal = 2500,
         )
+
+    private val newTestHeight = 11
 
     private suspend fun addOneToDb() {
         settingsDao.insert(settings.asDbSettings())
@@ -62,5 +67,33 @@ class SettingsDaoTest {
             addOneToDb()
             val retrievedSettings = settingsDao.get().first()
             assertEquals(settings, retrievedSettings?.asDomainSettings())
+        }
+
+    @Test
+    @Throws(Exception::class)
+    fun daoUpdateSettings_updatesSettings() =
+        runBlocking {
+            addOneToDb()
+            val allItems = settingsDao.get().first()
+            TestCase.assertNotSame(newTestHeight, allItems?.height)
+
+            settingsDao.update(allItems?.copy(height = newTestHeight) ?: DbSettings())
+
+            val actualHeight = settingsDao.get().first()?.height
+
+            assertEquals(newTestHeight, actualHeight)
+        }
+
+    @Test
+    @Throws(Exception::class)
+    fun daoDeleteSettings_deletesSettings() =
+        runBlocking {
+            addOneToDb()
+            val allItems = settingsDao.get().first()
+            assertEquals(settings, allItems?.asDomainSettings())
+
+            if (allItems != null) settingsDao.delete(allItems)
+
+            assertNull(settingsDao.get().first())
         }
 }

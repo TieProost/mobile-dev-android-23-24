@@ -10,6 +10,7 @@ import com.tieproost.fitnessapp.data.database.model.MealType
 import com.tieproost.fitnessapp.data.database.model.asDbFood
 import com.tieproost.fitnessapp.data.database.model.asDomainFood
 import com.tieproost.fitnessapp.model.Food
+import junit.framework.TestCase
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -30,14 +31,34 @@ class FoodDaoTest {
             name = "apple",
             servingQty = 2,
             servingUnit = "medium",
-            calories = 50.0,
+            calories = 54.1,
             photo = "",
             date = LocalDate.now(),
             meal = MealType.Breakfast,
         )
 
-    private suspend fun addOneToDb() {
+    private val foods =
+        listOf(
+            food,
+            Food(
+                name = "cookie",
+                servingQty = 3,
+                servingUnit = "small",
+                calories = 321.3,
+                photo = "",
+                date = LocalDate.now(),
+                meal = MealType.Lunch,
+            ),
+        )
+
+    private val newTestName = "newFoodTestName"
+
+    private suspend fun addOneToDb(food: Food) {
         foodDao.insert(food.asDbFood())
+    }
+
+    private suspend fun addMultipleToDb(foods: List<Food>) {
+        foods.forEach { addOneToDb(it) }
     }
 
     @Before
@@ -62,8 +83,46 @@ class FoodDaoTest {
     @Throws(Exception::class)
     fun daoInsertFood_insertsIntoDb() =
         runBlocking {
-            addOneToDb()
+            addOneToDb(food)
             val allItems = foodDao.getAllItems().first()
             assertEquals(food, allItems[0].asDomainFood())
+        }
+
+    @Test
+    @Throws(Exception::class)
+    fun daoUpdateFood_updatesFood() =
+        runBlocking {
+            addOneToDb(food)
+            val allItems = foodDao.getAllItems().first()
+            TestCase.assertNotSame(newTestName, allItems.first().name)
+
+            foodDao.update(allItems.first().copy(name = newTestName))
+
+            val actualName = foodDao.getAllItems().first()[0].name
+
+            assertEquals(newTestName, actualName)
+        }
+
+    @Test
+    @Throws(Exception::class)
+    fun daoDeleteFood_deletesFood() =
+        runBlocking {
+            addOneToDb(food)
+            val allItems = foodDao.getAllItems().first()
+            assertEquals(1, allItems.size)
+
+            foodDao.delete(allItems[0])
+
+            assertEquals(0, foodDao.getAllItems().first().size)
+        }
+
+    @Test
+    @Throws(Exception::class)
+    fun daoGetTotalCalories_returnsCorrectSum() =
+        runBlocking {
+            addMultipleToDb(foods)
+            val allItems = foodDao.getAllItems().first()
+
+            assertEquals(allItems.sumOf { it.calories }, foodDao.getTotalCalories().first())
         }
 }

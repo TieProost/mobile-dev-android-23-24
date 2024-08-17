@@ -1,6 +1,7 @@
 package com.tieproost.fitnessapp.data.database.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -15,6 +16,9 @@ interface SettingsDao {
 
     @Update
     suspend fun update(item: DbSettings)
+
+    @Delete
+    suspend fun delete(item: DbSettings)
 
     @Query("SELECT * from settings WHERE id = 0")
     fun get(): Flow<DbSettings?>
