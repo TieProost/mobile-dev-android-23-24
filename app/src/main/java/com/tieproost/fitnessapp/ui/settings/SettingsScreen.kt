@@ -168,7 +168,7 @@ fun SettingsOverview(
             modifier = Modifier.padding(16.dp),
         )
         SettingListItem(
-            onClick = showCalorieGoalDialog,
+            onClick = {},
             title = "Build with Nutrionix API © All rights reserved.",
             value = "",
         )
