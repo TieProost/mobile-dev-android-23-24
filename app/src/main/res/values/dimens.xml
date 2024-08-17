@@ -9,6 +9,8 @@
     <dimen name="spacing_medium">24dp</dimen>
     <dimen name="spacing_large">28dp</dimen>
 
+    <dimen name="spacing_hor_medium">12dp</dimen>
+
     <dimen name="icon_large">40dp</dimen>
     <dimen name="icon_xl">64dp</dimen>
 
