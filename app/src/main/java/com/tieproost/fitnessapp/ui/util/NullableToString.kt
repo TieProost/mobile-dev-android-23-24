@@ -1,6 +1,9 @@
 package com.tieproost.fitnessapp.ui.util
 
-fun nullableToString(value: Any?): String = (value ?: "").toString()
+fun nullableToString(
+    value: Any?,
+    result: String,
+): String = (value ?: result).toString()
 
 fun booleanToSexString(bool: Boolean?): String =
     when (bool) {

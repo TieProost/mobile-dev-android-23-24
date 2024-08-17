@@ -62,7 +62,7 @@ fun SettingsScreen() {
     val showHeightDialog = {
         settingsViewModel.showDialog {
             HeightDialogContent(
-                value = nullableToString(uiState.settingsForm.height),
+                value = nullableToString(uiState.settingsForm.height, ""),
                 onValueChange = settingsViewModel::onHeightChange,
             )
         }
@@ -71,7 +71,7 @@ fun SettingsScreen() {
     val showWeightDialog = {
         settingsViewModel.showDialog {
             WeightDialogContent(
-                value = nullableToString(uiState.settingsForm.weight),
+                value = nullableToString(uiState.settingsForm.weight, ""),
                 onValueChange = settingsViewModel::onWeightChange,
             )
         }
@@ -80,7 +80,7 @@ fun SettingsScreen() {
     val showCalorieGoalDialog = {
         settingsViewModel.showDialog {
             CalorieGoalDialogContent(
-                value = nullableToString(uiState.settingsForm.calorieGoal),
+                value = nullableToString(uiState.settingsForm.calorieGoal, ""),
                 onValueChange = settingsViewModel::onCalorieGoalChange,
             )
         }

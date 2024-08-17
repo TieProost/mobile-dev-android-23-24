@@ -36,6 +36,7 @@ import com.tieproost.fitnessapp.ui.common.LoadingScreen
 import com.tieproost.fitnessapp.ui.dashboard.components.CaloriesCard
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
+import com.tieproost.fitnessapp.ui.util.nullableToString
 import java.time.LocalDate
 import java.time.Period
 
@@ -81,9 +82,7 @@ fun DashBoardOverview(uiState: DashboardState) {
             settings = uiState.settings,
         )
 
-        Card {
-            Text(text = "Intake chart")
-        }
+
     }
 }
 
@@ -125,12 +124,12 @@ fun SettingsCard(settings: Settings) {
                 SettingItem(
                     icon = Icons.Filled.Scale,
                     title = "Weight",
-                    value = settings.weight.toString(),
+                    value =  nullableToString(settings.weight," - "),
                 )
                 SettingItem(
                     icon = Icons.Filled.Height,
                     title = "Height",
-                    value = settings.height.toString(),
+                    value = nullableToString(settings.height," - ") ,
                 )
             }
         }

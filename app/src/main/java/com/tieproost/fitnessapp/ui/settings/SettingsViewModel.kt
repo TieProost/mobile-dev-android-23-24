@@ -117,7 +117,7 @@ class SettingsViewModel(
 
         updateHeight(height)
 
-        return nullableToString(height)
+        return nullableToString(height, "")
     }
 
     fun onWeightChange(inputString: String): String {
@@ -153,7 +153,7 @@ class SettingsViewModel(
 
         updateCalorieGoal(calorieGoal ?: 2000)
 
-        return nullableToString(calorieGoal)
+        return nullableToString(calorieGoal, "")
     }
 
     private fun updateCalorieGoal(calorieGoal: Int) {
