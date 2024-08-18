@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.ui.navigation.bars
+package com.tieproost.fitnessapp.ui.navigation.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

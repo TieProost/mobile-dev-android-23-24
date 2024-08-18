@@ -1,4 +1,4 @@
-package com.tieproost.fitnessapp.ui.navigation.bars
+package com.tieproost.fitnessapp.ui.navigation.components
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -25,7 +25,7 @@ fun BottomNavigationBar(
                 selected = selected,
                 enabled = !selected,
                 onClick = { navigateTo(destination) },
-                modifier = Modifier.testTag(stringResource(destination.textId)+"NavigationItem"),
+                modifier = Modifier.testTag(stringResource(destination.textId) + "NavigationItem"),
             )
         }
     }
