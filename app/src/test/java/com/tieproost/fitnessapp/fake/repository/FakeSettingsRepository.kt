@@ -13,6 +13,5 @@ class FakeSettingsRepository : SettingsRepository {
         }
 
     override suspend fun save(settings: Settings) {
-        // TODO("Not yet implemented")
     }
 }

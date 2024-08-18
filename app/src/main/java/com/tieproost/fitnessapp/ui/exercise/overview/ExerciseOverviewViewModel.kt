@@ -30,11 +30,11 @@ class ExerciseOverviewViewModel(
     var apiState: ExerciseOverviewApiState by mutableStateOf(ExerciseOverviewApiState.Loading)
         private set
 
-    // uiState is a cold flow. Changes don't come in from above unless a refresh is called
+    // cold flow
     private val _uiState = MutableStateFlow(ExerciseOverviewState())
     val uiState: StateFlow<ExerciseOverviewState> = _uiState.asStateFlow()
 
-    // uiListState is a hot flow (.stateIn makes it so)
+    // hot flow
     lateinit var uiListState: StateFlow<ExerciseListState>
 
     init {
@@ -71,7 +71,6 @@ class ExerciseOverviewViewModel(
         }
     }
 
-    // object to tell the android framework how to handle the parameter of the viewModel
     companion object {
         val Factory: ViewModelProvider.Factory =
             viewModelFactory {

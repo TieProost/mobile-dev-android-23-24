@@ -29,7 +29,7 @@ class MealMutateViewModel(
     var apiState: MealsMutateApiState by mutableStateOf(MealsMutateApiState.Success)
         private set
 
-    // uiState is a cold flow. Changes don't come in from above unless a refresh is called
+    // cold flow
     private val _uiState = MutableStateFlow(MealMutateState())
     val uiState: StateFlow<MealMutateState> = _uiState.asStateFlow()
 

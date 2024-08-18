@@ -273,7 +273,7 @@ $dokka.location:com.tieproost.fitnessapp.ui.meals.mutate/MealsMutateApiState.Loa
 $dokka.location:com.tieproost.fitnessapp.ui.meals.mutate/MealsMutateApiState.Success///PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.mutate/-meals-mutate-api-state/-success/index.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals.mutate/MealsMutateApiState///PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.mutate/-meals-mutate-api-state/index.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals.overview////PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/index.html
-$dokka.location:com.tieproost.fitnessapp.ui.meals.overview//MealsOverview/#com.tieproost.fitnessapp.ui.meals.overview.MealsListState#kotlin.Function1[com.tieproost.fitnessapp.data.database.model.MealType,kotlin.Unit]/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/-meals-overview.html
+$dokka.location:com.tieproost.fitnessapp.ui.meals.overview//MealsOverview/#kotlin.collections.List[com.tieproost.fitnessapp.model.Food]#kotlin.Function1[com.tieproost.fitnessapp.data.database.model.MealType,kotlin.Unit]/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/-meals-overview.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals.overview/MealsListState///PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/-meals-list-state/index.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals.overview/MealsListState/MealsListState/#kotlin.collections.List[com.tieproost.fitnessapp.model.Food]/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/-meals-list-state/-meals-list-state.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals.overview/MealsListState/foods/#/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/-meals-list-state/foods.html
@@ -296,9 +296,10 @@ $dokka.location:com.tieproost.fitnessapp.ui.meals.overview/MealsOverviewViewMode
 $dokka.location:com.tieproost.fitnessapp.ui.meals.overview/MealsOverviewViewModel/uiState/#/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals.overview/-meals-overview-view-model/ui-state.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals////PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals/index.html
 $dokka.location:com.tieproost.fitnessapp.ui.meals//MealsScreen/#/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.meals/-meals-screen.html
-$dokka.location:com.tieproost.fitnessapp.ui.navigation.bars////PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.bars/index.html
-$dokka.location:com.tieproost.fitnessapp.ui.navigation.bars//BottomNavigationBar/#kotlin.String#kotlin.Function1[com.tieproost.fitnessapp.ui.navigation.NavigationDestinations,kotlin.Unit]/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.bars/-bottom-navigation-bar.html
-$dokka.location:com.tieproost.fitnessapp.ui.navigation.bars//TopNavigationBar/#kotlin.Function0[kotlin.Unit]#kotlin.String/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.bars/-top-navigation-bar.html
+$dokka.location:com.tieproost.fitnessapp.ui.navigation.components////PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.components/index.html
+$dokka.location:com.tieproost.fitnessapp.ui.navigation.components//BottomNavigationBar/#kotlin.String#kotlin.Function1[com.tieproost.fitnessapp.ui.navigation.NavigationDestinations,kotlin.Unit]/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.components/-bottom-navigation-bar.html
+$dokka.location:com.tieproost.fitnessapp.ui.navigation.components//NavigationDrawerContent/#kotlin.String#kotlin.Function1[com.tieproost.fitnessapp.ui.navigation.NavigationDestinations,kotlin.Unit]/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.components/-navigation-drawer-content.html
+$dokka.location:com.tieproost.fitnessapp.ui.navigation.components//TopNavigationBar/#kotlin.Function0[kotlin.Unit]#kotlin.String/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation.components/-top-navigation-bar.html
 $dokka.location:com.tieproost.fitnessapp.ui.navigation////PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation/index.html
 $dokka.location:com.tieproost.fitnessapp.ui.navigation//NavHostComponent/#androidx.compose.foundation.layout.PaddingValues#androidx.navigation.NavHostController#kotlin.String/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation/-nav-host-component.html
 $dokka.location:com.tieproost.fitnessapp.ui.navigation/NavigationActions///PointingToDeclaration/app/com.tieproost.fitnessapp.ui.navigation/-navigation-actions/index.html
@@ -579,8 +580,14 @@ $dokka.location:com.tieproost.fitnessapp.ui.util////PointingToDeclaration/app/c
 $dokka.location:com.tieproost.fitnessapp.ui.util//booleanToSexString/#kotlin.Boolean?/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/boolean-to-sex-string.html
 $dokka.location:com.tieproost.fitnessapp.ui.util//nullableToString/#kotlin.Any?#kotlin.String/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/nullable-to-string.html
 $dokka.location:com.tieproost.fitnessapp.ui.util//sexStringToBoolean/#kotlin.String/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/sex-string-to-boolean.html
+$dokka.location:com.tieproost.fitnessapp.ui.util/NavigationType.BOTTOM_NAVIGATION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.tieproost.fitnessapp.ui.util/-navigation-type/-b-o-t-t-o-m_-n-a-v-i-g-a-t-i-o-n/index.html
+$dokka.location:com.tieproost.fitnessapp.ui.util/NavigationType.PERMANENT_NAVIGATION_DRAWER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/com.tieproost.fitnessapp.ui.util/-navigation-type/-p-e-r-m-a-n-e-n-t_-n-a-v-i-g-a-t-i-o-n_-d-r-a-w-e-r/index.html
+$dokka.location:com.tieproost.fitnessapp.ui.util/NavigationType///PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/-navigation-type/index.html
+$dokka.location:com.tieproost.fitnessapp.ui.util/NavigationType/entries/#/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/-navigation-type/entries.html
+$dokka.location:com.tieproost.fitnessapp.ui.util/NavigationType/valueOf/#kotlin.String/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/-navigation-type/value-of.html
+$dokka.location:com.tieproost.fitnessapp.ui.util/NavigationType/values/#/PointingToDeclaration/app/com.tieproost.fitnessapp.ui.util/-navigation-type/values.html
 $dokka.location:com.tieproost.fitnessapp.ui////PointingToDeclaration/app/com.tieproost.fitnessapp.ui/index.html
-$dokka.location:com.tieproost.fitnessapp.ui//FitnessApp/#androidx.navigation.NavHostController/PointingToDeclaration/app/com.tieproost.fitnessapp.ui/-fitness-app.html
+$dokka.location:com.tieproost.fitnessapp.ui//FitnessApp/#androidx.navigation.NavHostController#com.tieproost.fitnessapp.ui.util.NavigationType/PointingToDeclaration/app/com.tieproost.fitnessapp.ui/-fitness-app.html
 $dokka.location:com.tieproost.fitnessapp////PointingToDeclaration/app/com.tieproost.fitnessapp/index.html
 $dokka.location:com.tieproost.fitnessapp/FitnessApplication///PointingToDeclaration/app/com.tieproost.fitnessapp/-fitness-application/index.html
 $dokka.location:com.tieproost.fitnessapp/FitnessApplication/FitnessApplication/#/PointingToDeclaration/app/com.tieproost.fitnessapp/-fitness-application/-fitness-application.html
@@ -611,7 +618,7 @@ com.tieproost.fitnessapp.ui.meals.components
 com.tieproost.fitnessapp.ui.meals.mutate
 com.tieproost.fitnessapp.ui.meals.overview
 com.tieproost.fitnessapp.ui.navigation
-com.tieproost.fitnessapp.ui.navigation.bars
+com.tieproost.fitnessapp.ui.navigation.components
 com.tieproost.fitnessapp.ui.settings
 com.tieproost.fitnessapp.ui.settings.dialog
 com.tieproost.fitnessapp.ui.settings.dialog.components

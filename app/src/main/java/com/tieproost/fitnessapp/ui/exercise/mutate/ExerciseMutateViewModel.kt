@@ -28,7 +28,7 @@ class ExerciseMutateViewModel(
     var apiState: ExerciseMutateApiState by mutableStateOf(ExerciseMutateApiState.Success)
         private set
 
-    // uiState is a cold flow. Changes don't come in from above unless a refresh is called
+    // cold flow
     private val _uiState = MutableStateFlow(ExerciseMutateState())
     val uiState: StateFlow<ExerciseMutateState> = _uiState.asStateFlow()
 

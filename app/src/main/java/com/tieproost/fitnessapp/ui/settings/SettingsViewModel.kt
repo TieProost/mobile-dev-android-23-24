@@ -41,11 +41,11 @@ class SettingsViewModel(
     var apiState: SettingsApiState by mutableStateOf(SettingsApiState.Loading)
         private set
 
-    // uiState is a cold flow. Changes don't come in from above unless a refresh is called
+    // cold flow
     private val _uiState = MutableStateFlow(SettingsState())
     val uiState: StateFlow<SettingsState> = _uiState.asStateFlow()
 
-    // uiListState is a hot flow (.stateIn makes it so)
+    // hot flow
     lateinit var uiObjectState: StateFlow<SettingsObjectState>
 
     init {

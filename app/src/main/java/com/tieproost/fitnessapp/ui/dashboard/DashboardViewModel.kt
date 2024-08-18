@@ -56,7 +56,6 @@ class DashboardViewModel(
             initialValue = DashboardState(),
         )
 
-    // object to tell the android framework how to handle the parameter of the viewModel
     companion object {
         val Factory: ViewModelProvider.Factory =
             viewModelFactory {
