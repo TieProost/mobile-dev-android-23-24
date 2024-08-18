@@ -201,7 +201,7 @@ fun SettingListItem(
                 text = value,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.End,
-                color = MaterialTheme.colorScheme.secondary,
+                color = MaterialTheme.colorScheme.primary,
             )
         },
     )

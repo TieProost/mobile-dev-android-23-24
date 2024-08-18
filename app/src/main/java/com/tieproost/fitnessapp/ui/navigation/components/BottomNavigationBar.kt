@@ -1,6 +1,7 @@
 package com.tieproost.fitnessapp.ui.navigation.components
 
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
@@ -21,7 +22,10 @@ fun BottomNavigationBar(
     selectedDestination: String,
     navigateTo: (NavigationDestinations) -> Unit,
 ) {
-    NavigationBar {
+    NavigationBar(
+        containerColor = MaterialTheme.colorScheme.onSecondary,
+        contentColor = MaterialTheme.colorScheme.primary,
+    ) {
         NavigationDestinations.values().slice(0..2).forEach { destination ->
             val selected = selectedDestination == destination.name
 
