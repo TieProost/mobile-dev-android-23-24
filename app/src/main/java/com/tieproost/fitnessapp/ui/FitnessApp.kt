@@ -26,7 +26,7 @@ import com.tieproost.fitnessapp.ui.util.NavigationType
 @Composable
 fun FitnessApp(
     navController: NavHostController = rememberNavController(),
-    navigationType: NavigationType,
+    navigationType: NavigationType = NavigationType.BOTTOM_NAVIGATION,
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
 
