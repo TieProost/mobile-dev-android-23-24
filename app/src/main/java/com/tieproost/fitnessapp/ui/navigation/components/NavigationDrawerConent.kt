@@ -9,7 +9,8 @@ import androidx.compose.material3.PermanentDrawerSheet
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
 @Composable
@@ -17,7 +18,11 @@ fun NavigationDrawerContent(
     selectedDestination: String,
     navigateTo: (NavigationDestinations) -> Unit,
 ) {
-    PermanentDrawerSheet(Modifier.width(200.dp).padding(16.dp)) {
+    PermanentDrawerSheet(
+        Modifier
+            .width(dimensionResource(R.dimen.drawer_large))
+            .padding(dimensionResource(R.dimen.padding_medium)),
+    ) {
         Column(modifier = Modifier) {
             for (destination in NavigationDestinations.values()) {
                 NavigationDrawerItem(

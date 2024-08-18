@@ -20,4 +20,6 @@
     <dimen name="textfield_medium">100dp</dimen>
 
     <dimen name="photo_medium">160dp</dimen>
+
+    <dimen name="drawer_large">200dp</dimen>
 </resources>
