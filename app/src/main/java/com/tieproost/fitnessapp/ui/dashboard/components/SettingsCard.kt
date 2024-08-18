@@ -66,12 +66,14 @@ fun SettingsCard(settings: Settings) {
                 SettingItem(
                     icon = Icons.Filled.Scale,
                     title = stringResource(R.string.weight),
-                    value = nullableToString(settings.weight, stringResource(R.string.n_a)),
+                    value = "${nullableToString(settings.weight, stringResource(R.string.n_a))
+                    } ${stringResource(R.string.kg)}",
                 )
                 SettingItem(
                     icon = Icons.Filled.Height,
                     title = stringResource(R.string.height),
-                    value = nullableToString(settings.height, stringResource(R.string.n_a)),
+                    value = "${nullableToString(settings.height, stringResource(R.string.n_a))
+                    } ${stringResource(R.string.cm)}",
                 )
             }
         }

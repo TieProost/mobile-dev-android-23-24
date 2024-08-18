@@ -17,7 +17,6 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.data.database.model.asDomainExercise
-import com.tieproost.fitnessapp.model.Exercise
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogButtons
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogLoadingOverlay
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogTextField
