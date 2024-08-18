@@ -15,6 +15,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import com.tieproost.fitnessapp.R
 
+/**
+ * Composable function to display calories aggregate header.
+ *
+ * @param text [String] for calorie count prefix.
+ * @param calories Calorie count.
+ */
 @Composable
 fun TotalCaloriesHeader(
     text: String,

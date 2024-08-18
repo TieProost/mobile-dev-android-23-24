@@ -13,6 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import com.tieproost.fitnessapp.R
 
+/**
+ * Composable function for loading screen when app is loading main pages.
+ */
 @Composable
 fun LoadingScreen() {
     Box(

@@ -3,6 +3,11 @@ package com.tieproost.fitnessapp.ui.navigation
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 
+/**
+ * A helper class for managing navigation.
+ *
+ * @param navController The [NavHostController] used for navigation.
+ */
 class NavigationActions(
     private val navController: NavHostController,
 ) {

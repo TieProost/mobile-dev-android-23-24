@@ -22,6 +22,9 @@ import com.tieproost.fitnessapp.ui.dashboard.components.CaloriesCard
 import com.tieproost.fitnessapp.ui.dashboard.components.SettingsCard
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for dashboard screen.
+ */
 @Composable
 fun DashboardScreen() {
     val dashboardViewModel: DashboardViewModel = viewModel(factory = DashboardViewModel.Factory)

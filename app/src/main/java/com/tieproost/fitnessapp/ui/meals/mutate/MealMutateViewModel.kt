@@ -18,6 +18,11 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel class responsible for managing the state and actions of the meal mutate dialog.
+ *
+ * @property mealsRepository The repository for saving meals.
+ */
 class MealMutateViewModel(
     private val mealsRepository: MealsRepository,
 ) : ViewModel() {

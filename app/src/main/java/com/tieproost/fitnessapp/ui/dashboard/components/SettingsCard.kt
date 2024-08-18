@@ -23,6 +23,11 @@ import com.tieproost.fitnessapp.ui.util.nullableToString
 import java.time.LocalDate
 import java.time.Period
 
+/**
+ * Composable function for displaying settings in card.
+ *
+ * @param settings [Settings] to display.
+ */
 @Composable
 fun SettingsCard(settings: Settings) {
     val age =

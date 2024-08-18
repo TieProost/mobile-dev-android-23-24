@@ -19,6 +19,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.tieproost.fitnessapp.R
 
+/**
+ * Composable function for generic header.
+ *
+ * @param title Title for header.
+ * @param showDialog Lambda function to show add dialog.
+ */
 @Composable
 fun OverviewHeader(
     title: String,

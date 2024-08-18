@@ -19,6 +19,12 @@ import com.tieproost.fitnessapp.ui.common.TotalCaloriesHeader
 import com.tieproost.fitnessapp.ui.exercise.components.ExerciseListItem
 import kotlin.math.roundToInt
 
+/**
+ * Composable function for displaying exercise overview.
+ *
+ * @param exercises [List] of [Exercise] containing the exercises to display.
+ * @param showDialog A lambda function to show dialog for adding.
+ */
 @Composable
 fun ExerciseOverview(
     exercises: List<Exercise>,

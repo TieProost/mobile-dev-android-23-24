@@ -10,6 +10,12 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for bottom NavigationBar in compact mode.
+ *
+ * @param selectedDestination The current destination in navController.
+ * @param navigateTo A function to navigate to [NavigationDestinations].
+ */
 @Composable
 fun BottomNavigationBar(
     selectedDestination: String,

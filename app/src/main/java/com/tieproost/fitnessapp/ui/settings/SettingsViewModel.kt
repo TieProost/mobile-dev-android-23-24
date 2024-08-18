@@ -29,6 +29,11 @@ import java.time.ZoneId
 import java.time.ZoneOffset
 import java.util.Locale
 
+/**
+ * ViewModel class responsible for managing the state and actions of settings screen.
+ *
+ * @property settingsRepository The repository for fetching settings.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 class SettingsViewModel(
     private val settingsRepository: SettingsRepository,

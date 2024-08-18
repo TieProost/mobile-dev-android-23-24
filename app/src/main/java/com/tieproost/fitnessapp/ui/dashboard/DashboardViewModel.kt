@@ -17,6 +17,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 
+/**
+ * ViewModel class responsible for managing the state and actions of the dashboard.
+ *
+ * @property mealsRepository The repository for fetching total calories of food.
+ * @property exerciseRepository The repository for fetching total calories of exercises.
+ * @property settingsRepository The repository for fetching settings.
+ */
 class DashboardViewModel(
     private val mealsRepository: MealsRepository,
     private val exerciseRepository: ExerciseRepository,

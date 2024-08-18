@@ -6,6 +6,14 @@ import androidx.compose.runtime.Composable
 import com.tieproost.fitnessapp.model.Settings
 import java.util.Locale
 
+/**
+ * Represents the state of the settings screen.
+ *
+ * @property isDialogVisible Whether the dialog for editing settings is visible.
+ * @property dialogContent Content to display in dialog.
+ * @property settingsForm [Settings] that are being edited.
+ * @property datePickerState [DatePickerState] for DatePicker dialog.
+ */
 data class SettingsState
     @OptIn(ExperimentalMaterial3Api::class)
     constructor(

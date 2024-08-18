@@ -5,7 +5,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import com.tieproost.fitnessapp.R
 
+/**
+ * Composable function for error screen.
+ */
 @Composable
-fun ErrorScreen()  {
+fun ErrorScreen() {
     Text(stringResource(R.string.something_went_wrong))
 }

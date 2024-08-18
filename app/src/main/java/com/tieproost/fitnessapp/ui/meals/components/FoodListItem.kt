@@ -18,6 +18,11 @@ import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Food
 import kotlin.math.roundToInt
 
+/**
+ * Composable function for displaying one food.
+ *
+ * @param food [Food] to display.
+ */
 @Composable
 fun FoodListItem(food: Food) {
     ListItem(

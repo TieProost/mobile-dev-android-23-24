@@ -19,6 +19,11 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import java.io.IOException
 
+/**
+ * ViewModel class responsible for managing the state and actions of the exercise overview.
+ *
+ * @property exerciseRepository The repository for fetching exercises.
+ */
 class ExerciseOverviewViewModel(
     private val exerciseRepository: ExerciseRepository,
 ) : ViewModel() {

@@ -2,7 +2,12 @@ package com.tieproost.fitnessapp.ui.meals.mutate
 
 import com.tieproost.fitnessapp.network.model.ApiFood
 
-// the data class just holds the (immutable) values of the state
+/**
+* Represents the state of the meals mutate dialog.
+*
+* @property query The natural language query to search.
+* @property results Results for the searched query.
+*/
 data class MealMutateState(
     val query: String = "",
     val results: List<ApiFood> = listOf(),

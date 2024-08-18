@@ -36,6 +36,9 @@ import com.tieproost.fitnessapp.ui.settings.dialog.dialogcontent.WeightDialogCon
 import com.tieproost.fitnessapp.ui.util.booleanToSexString
 import com.tieproost.fitnessapp.ui.util.nullableToString
 
+/**
+ * Composable function for settings screen.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen() {

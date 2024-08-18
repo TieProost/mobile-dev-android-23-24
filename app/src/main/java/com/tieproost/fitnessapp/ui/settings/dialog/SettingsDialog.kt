@@ -18,6 +18,13 @@ import androidx.compose.ui.window.DialogProperties
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for displaying generic settings editing dialog.
+ *
+ * @param dialogContent The Composable function with the setting to be edited.
+ * @param hideDialog A lambda function to hide dialog.
+ * @param saveSettings A lambda function to save settings.
+ */
 @Composable
 fun SettingsDialog(
     dialogContent: @Composable () -> Unit,

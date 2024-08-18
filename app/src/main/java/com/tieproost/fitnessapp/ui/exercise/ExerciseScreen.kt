@@ -17,6 +17,9 @@ import com.tieproost.fitnessapp.ui.exercise.overview.ExerciseOverviewApiState
 import com.tieproost.fitnessapp.ui.exercise.overview.ExerciseOverviewViewModel
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for exercise screen.
+ */
 @Composable
 fun ExerciseScreen() {
     val exerciseOverviewViewModel: ExerciseOverviewViewModel = viewModel(factory = ExerciseOverviewViewModel.Factory)

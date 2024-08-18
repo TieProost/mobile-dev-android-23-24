@@ -18,6 +18,11 @@ import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.model.Exercise
 import kotlin.math.roundToInt
 
+/**
+ * Composable function for displaying one exercise.
+ *
+ * @param exercise [Exercise] to display.
+ */
 @Composable
 fun ExerciseListItem(exercise: Exercise) {
     ListItem(

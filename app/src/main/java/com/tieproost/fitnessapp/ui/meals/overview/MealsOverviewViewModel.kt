@@ -20,6 +20,11 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import java.io.IOException
 
+/**
+ * ViewModel class responsible for managing the state and actions of the meals overview.
+ *
+ * @property mealsRepository The repository for fetching exercises.
+ */
 class MealsOverviewViewModel(
     private val mealsRepository: MealsRepository,
 ) : ViewModel() {

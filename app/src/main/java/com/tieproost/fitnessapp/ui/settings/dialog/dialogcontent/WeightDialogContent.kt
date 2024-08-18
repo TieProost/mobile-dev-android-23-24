@@ -24,6 +24,12 @@ import androidx.compose.ui.text.input.TextFieldValue
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.settings.dialog.components.DialogColumn
 
+/**
+ * Composable function for displaying weight setting dialog content.
+ *
+ * @param onValueChange Function to change the value.
+ * @param value Current value.
+ */
 @Composable
 fun WeightDialogContent(
     onValueChange: (String) -> String,

@@ -11,6 +11,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
+/**
+ * Composable function that displays the destination of navigation.
+ *
+ * @param paddingValues Padding values passed by Scaffold.
+ * @param navController [NavHostController] entity to manage navigating.
+ * @param startDestination A lambda function to navigate to the car parks screen.
+ */
 @Composable
 fun NavHostComponent(
     paddingValues: PaddingValues,

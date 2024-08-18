@@ -17,6 +17,11 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel class responsible for managing the state and actions of the exercise mutate dialog.
+ *
+ * @property exerciseRepository The repository for saving exercises.
+ */
 class ExerciseMutateViewModel(
     private val exerciseRepository: ExerciseRepository,
 ) : ViewModel() {

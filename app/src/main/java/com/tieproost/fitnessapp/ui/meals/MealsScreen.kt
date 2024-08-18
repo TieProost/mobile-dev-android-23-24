@@ -17,6 +17,9 @@ import com.tieproost.fitnessapp.ui.meals.overview.MealsOverviewApiState
 import com.tieproost.fitnessapp.ui.meals.overview.MealsOverviewViewModel
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for meals screen.
+ */
 @Composable
 fun MealsScreen() {
     val mealsOverviewViewModel: MealsOverviewViewModel = viewModel(factory = MealsOverviewViewModel.Factory)
@@ -35,7 +38,7 @@ fun MealsScreen() {
             is MealsOverviewApiState.Error -> ErrorScreen()
             is MealsOverviewApiState.Success ->
                 MealsOverview(
-                    uiListState = uiListState,
+                    foods = uiListState.foods,
                     showDialog = mealsOverviewViewModel::showDialog,
                 )
         }

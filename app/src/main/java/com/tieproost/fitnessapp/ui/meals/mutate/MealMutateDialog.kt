@@ -25,6 +25,12 @@ import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogTopBar
 import com.tieproost.fitnessapp.ui.meals.components.FoodListItem
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for displaying meal add dialog.
+ *
+ * @param hideDialog A lambda function to hide dialog for adding.
+ * @param mealType The [MealType] for added foods.
+ */
 @Composable
 fun MealMutateDialog(
     hideDialog: () -> Unit,

@@ -13,6 +13,12 @@ import androidx.compose.ui.res.dimensionResource
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for Drawer navigation.
+ *
+ * @param selectedDestination The current destination in navController.
+ * @param navigateTo A function to navigate to [NavigationDestinations].
+ */
 @Composable
 fun NavigationDrawerContent(
     selectedDestination: String,

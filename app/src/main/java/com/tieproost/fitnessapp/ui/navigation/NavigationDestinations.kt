@@ -15,6 +15,13 @@ import com.tieproost.fitnessapp.ui.exercise.ExerciseScreen
 import com.tieproost.fitnessapp.ui.meals.MealsScreen
 import com.tieproost.fitnessapp.ui.settings.SettingsScreen
 
+/**
+ * Enum for various.
+ *
+ * @property textId Resource id for description.
+ * @property icon Icon for navigation bar.
+ * @property content Composable content of the destination.
+ */
 enum class NavigationDestinations(
     @StringRes val textId: Int,
     val icon: ImageVector,

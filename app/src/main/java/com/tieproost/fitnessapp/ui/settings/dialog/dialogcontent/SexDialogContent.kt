@@ -17,6 +17,12 @@ import androidx.compose.ui.res.stringResource
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.ui.settings.dialog.components.DialogColumn
 
+/**
+ * Composable function for displaying sex setting dialog content.
+ *
+ * @param onValueChange Function to change the value.
+ * @param value Current value.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SexDialogContent(

@@ -225,11 +225,18 @@ val unspecified_scheme =
         Color.Unspecified,
     )
 
+/**
+ * Composable function to apply the Android app theme.
+ *
+ * @param darkTheme Whether to use the dark theme.
+ * @param dynamicColor Whether to use dynamic colors.
+ * @param content The content of the app.
+ */
 @Composable
 fun FitnessAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = false,
+    dynamicColor: Boolean = true,
     content:
         @Composable () -> Unit,
 ) {

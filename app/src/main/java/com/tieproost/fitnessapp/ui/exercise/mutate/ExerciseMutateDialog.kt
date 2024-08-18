@@ -17,6 +17,7 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tieproost.fitnessapp.R
 import com.tieproost.fitnessapp.data.database.model.asDomainExercise
+import com.tieproost.fitnessapp.model.Exercise
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogButtons
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogLoadingOverlay
 import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogTextField
@@ -24,6 +25,11 @@ import com.tieproost.fitnessapp.ui.common.mutatedialog.MutateDialogTopBar
 import com.tieproost.fitnessapp.ui.exercise.components.ExerciseListItem
 import com.tieproost.fitnessapp.ui.navigation.NavigationDestinations
 
+/**
+ * Composable function for displaying exercise add dialog.
+ *
+ * @param hideDialog A lambda function to hide dialog for adding.
+ */
 @Composable
 fun ExerciseMutateDialog(hideDialog: () -> Unit) {
     val exerciseMutateViewModel: ExerciseMutateViewModel = viewModel(factory = ExerciseMutateViewModel.Factory)
