@@ -9,14 +9,14 @@ import java.time.LocalDate
 /**
  * Represents an entity in the database for storing foods.
  *
- * @param id The unique identifier. Automatically generated.
- * @param date The date when the food was logged.
- * @param name Name of the food.
- * @param meal [MealType] of the food.
- * @param servingUnit Unit of the serving.
- * @param servingQty Quantity of food servings.
- * @param calories Amount of calories of the food.
- * @param photo URL for the thumbnail of the food.
+ * @property id The unique identifier. Automatically generated.
+ * @property date The date when the food was logged.
+ * @property name Name of the food.
+ * @property meal [MealType] of the food.
+ * @property servingUnit Unit of the serving.
+ * @property servingQty Quantity of food servings.
+ * @property calories Amount of calories of the food.
+ * @property photo URL for the thumbnail of the food.
  */
 @Entity(tableName = "foods")
 data class DbFood(

@@ -5,8 +5,8 @@ import kotlinx.serialization.Serializable
 /**
  * Represents a photo received from remote API.
  *
- * @param thumb Thumbnail photo URL.
- * @param highres High resolution photo URL.
+ * @property thumb Thumbnail photo URL.
+ * @property highres High resolution photo URL.
  */
 @Serializable
 data class ApiPhoto(

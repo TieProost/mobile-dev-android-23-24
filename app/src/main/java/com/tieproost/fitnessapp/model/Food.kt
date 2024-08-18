@@ -6,13 +6,13 @@ import java.time.LocalDate
 /**
  * Represents a food domain object.
  *
- * @param date The date when the food was logged.
- * @param name Name of the food.
- * @param meal [MealType] of the food.
- * @param servingUnit Unit of the serving.
- * @param servingQty Quantity of food servings.
- * @param calories Amount of calories of the food.
- * @param photo URL for the thumbnail of the food.
+ * @property date The date when the food was logged.
+ * @property name Name of the food.
+ * @property meal [MealType] of the food.
+ * @property servingUnit Unit of the serving.
+ * @property servingQty Quantity of food servings.
+ * @property calories Amount of calories of the food.
+ * @property photo URL for the thumbnail of the food.
  */
 data class Food(
     val date: LocalDate,

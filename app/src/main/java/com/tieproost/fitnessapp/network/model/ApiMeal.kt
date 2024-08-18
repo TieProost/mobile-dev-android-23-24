@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 /**
  * Represents a list of foods received from remote API.
  *
- * @param foods [List] of [ApiFood].
+ * @property foods [List] of [ApiFood].
  */
 @Serializable
 data class ApiMeal(

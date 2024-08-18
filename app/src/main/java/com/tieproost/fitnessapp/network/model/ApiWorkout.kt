@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 /**
  * Represents a list of exercises received from remote API.
  *
- * @param exercises [List] of [ApiExercise].
+ * @property exercises [List] of [ApiExercise].
  */
 @Serializable
 data class ApiWorkout(
