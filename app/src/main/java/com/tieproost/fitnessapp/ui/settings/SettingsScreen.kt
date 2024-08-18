@@ -131,7 +131,7 @@ fun SettingsOverview(
         modifier = Modifier.verticalScroll(rememberScrollState()),
     ) {
         Text(
-            text = "${stringResource(R.string.birthday)}: ",
+            text = "${stringResource(R.string.settings)}: ",
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
         )
