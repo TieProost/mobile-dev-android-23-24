@@ -10,6 +10,10 @@ import androidx.compose.ui.Modifier
 import com.tieproost.fitnessapp.ui.FitnessApp
 import com.tieproost.fitnessapp.ui.theme.FitnessAppTheme
 
+/**
+ * Main activity for the application.
+ * Extends [ComponentActivity] and is responsible for initializing the user interface.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

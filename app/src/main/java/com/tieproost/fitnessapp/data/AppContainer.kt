@@ -17,12 +17,20 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
+/**
+ * This interface defines the dependencies that can be accessed through the [AppContainer].
+ */
 interface AppContainer {
     val mealsRepository: MealsRepository
     val exerciseRepository: ExerciseRepository
     val settingsRepository: SettingsRepository
 }
 
+/**
+ * The default implementation of the [AppContainer] interface.
+ *
+ * @param context The Android application context.
+ */
 class DefaultAppContainer(
     private val context: Context,
 ) : AppContainer {

@@ -6,6 +6,16 @@ import androidx.room.PrimaryKey
 import com.tieproost.fitnessapp.model.Settings
 import java.time.LocalDate
 
+/**
+ * Represents an entity in the database for storing settings.
+ *
+ * @param id The unique identifier. Is always 0.
+ * @param birthDate The birthdate of the user.
+ * @param sex Sex of the user.
+ * @param weight Weight of the user.
+ * @param height Height of the user.
+ * @param calorieGoal Daily goal for calorie intake.
+ */
 @Entity(tableName = "settings", indices = [Index(value = ["id"], unique = true)])
 data class DbSettings(
     @PrimaryKey

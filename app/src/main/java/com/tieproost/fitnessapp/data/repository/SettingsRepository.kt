@@ -13,6 +13,11 @@ interface SettingsRepository {
     suspend fun save(settings: Settings)
 }
 
+/**
+ * Implementation of [SettingsRepository] that caches articles using a local database (represented by [settingsDao]).
+ *
+ * @param settingsDao The data access object for the local database.
+ */
 class CachingSettingsRepository(
     private val settingsDao: SettingsDao,
 ) : SettingsRepository {

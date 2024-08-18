@@ -13,7 +13,11 @@ import com.tieproost.fitnessapp.data.database.model.DbFood
 import com.tieproost.fitnessapp.data.database.model.DbSettings
 
 /**
- * Database class with a singleton Instance object.
+ * Database class with a singleton instance object.
+ *
+ * @property foodDao The Data Access Object (DAO) for articles.
+ * @property exerciseDao The Data Access Object (DAO) for study locations.
+ * @property settingsDao The Data Access Object (DAO) for car parks.
  */
 @Database(entities = [DbFood::class, DbExercise::class, DbSettings::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)

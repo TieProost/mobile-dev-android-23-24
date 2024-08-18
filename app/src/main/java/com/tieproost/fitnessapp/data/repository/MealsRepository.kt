@@ -26,6 +26,13 @@ interface MealsRepository {
     fun getTotalCalories(): Flow<Double>
 }
 
+/**
+ * Implementation of [MealsRepository] that caches articles using a local database
+ * (represented by [foodDao]) and fetches data from a remote source (represented by [fitnessApiService]).
+ *
+ * @param fitnessApiService The API service for fetching remote data from Nutrionix.
+ * @param foodDao The data access object for the local database.
+ */
 class CachingMealsRepository(
     private val fitnessApiService: FitnessApiService,
     private val foodDao: FoodDao,

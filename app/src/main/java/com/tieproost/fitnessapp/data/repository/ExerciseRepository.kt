@@ -22,6 +22,13 @@ interface ExerciseRepository {
     fun getTotalCalories(): Flow<Double>
 }
 
+/**
+ * Implementation of [ExerciseRepository] that caches articles using a local database
+ * (represented by [exerciseDao]) and fetches data from a remote source (represented by [fitnessApiService]).
+ *
+ * @param fitnessApiService The API service for fetching remote data from Nutrionix.
+ * @param exerciseDao The data access object for the local database.
+ */
 class CachingExerciseRepository(
     private val fitnessApiService: FitnessApiService,
     private val exerciseDao: ExerciseDao,

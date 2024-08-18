@@ -6,6 +6,16 @@ import com.tieproost.fitnessapp.model.Exercise
 import com.tieproost.fitnessapp.network.model.ApiExercise
 import java.time.LocalDate
 
+/**
+ * Represents an entity in the database for storing exercises.
+ *
+ * @param id The unique identifier. Automatically generated.
+ * @param date The date when the exercise was logged.
+ * @param name Name of the exercise.
+ * @param durationMinutes Duration of the exercise in minutes.
+ * @param calories Amount of calories burned with exercise.
+ * @param photo URL for the thumbnail of the exercise.
+ */
 @Entity(tableName = "exercises")
 data class DbExercise(
     @PrimaryKey(autoGenerate = true)
