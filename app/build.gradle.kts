@@ -5,6 +5,11 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
+    id("org.jetbrains.dokka") version "1.9.10"
+}
+
+tasks.dokkaHtml {
+    outputDirectory.set(file("$rootDir/docs"))
 }
 
 android {
@@ -117,4 +122,7 @@ dependencies {
 
     // navigation testing
     androidTestImplementation("androidx.navigation:navigation-testing:2.7.5")
+
+    // Dokka
+    dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.10")
 }
